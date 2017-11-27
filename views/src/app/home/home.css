@@ -1,0 +1,394 @@
+
+.header {
+  display: block;
+  background: #532380;
+  padding: 14px;
+}
+.header span {
+  color:white;
+  font-size:24px;
+}
+.right-menu {
+  float:right;
+}
+.right-menu span {
+  padding:0px 25px;
+}
+.home-content {
+  margin: 100px;
+
+  border-radius: 3px;
+  border: 1px solid silver;
+}
+.label-heading {
+  background: #d0db63;
+  font-size: 18px;
+  color:#2f2f2f;
+}
+.label-heading label {
+  padding:7px 10px;
+}
+
+.sub-list-menu li {
+  display: block;
+  border: 1px solid silver;
+  padding: 10px;
+  margin-bottom: 1px;
+}
+.sub-list-menu {
+  margin-bottom:3px !important;
+  font-weight:500;
+  font-size:16px;
+}
+.openSubMenu {
+  color:white;
+  background: #532380;
+}
+.emulator-details  {
+  padding: 30px 20px;
+  line-height: 2;
+  word-break: break-word;
+  width: 540px;
+  height:auto;
+  background: white;
+  border-radius:2px
+}
+.device-menu {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  padding: 20px;
+}
+.myPopover .popover-title{
+  font-size:18px !important;
+}
+.myPopover .popover-content .add{
+  border: 1px solid green;
+  color: green;
+  background: ghostwhite;
+  font-size: 18px;
+  padding: 10px;
+  width: 100%;
+}
+.myPopover .popover-content .remove{
+  border: 1px solid red;
+  color: red;
+  background: ghostwhite;
+  font-size: 18px;
+  padding: 10px;
+  width: 100%;
+}
+.main-menu {
+  padding-left:0px !important;
+  min-width:300px !important;
+ width:auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height:calc(100vh);
+  border-right: 1px solid #686C6F;
+  background:#FFFFFF;
+}
+ul {
+  list-style: none;
+  display: block;
+    border-bottom: 1px solid silver;
+  padding: 5px 10px;
+  margin: 3px 10px;
+}
+.device-storage {
+  margin:25px 10%;
+  display: grid;
+}
+.system-space {
+  width: 50%;
+  height: auto !important;
+  margin: 10px auto;
+  border: 1px solid silver;
+  padding: 10px;
+}
+.progress-unused-color  .progress-bar-info{
+  background-color: #a2a5a7 !important;
+}
+.memory-allocate {
+  height:40px !important ;
+  margin:10px 2%;
+  word-wrap: break-word;
+}
+.progress-text {
+  overflow: hidden;
+  display:flex;
+}
+.memory-alo-details {
+  border-left: 5px solid silver;
+  color: silver;
+  padding:0px 4px;
+  word-wrap: break-word;
+  line-height: 1;
+}
+h5 {
+  color: #a2a5a7;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+.ac-heading {
+  color:#532380;
+  font-weight:bolder;
+}
+.device-keys {
+  color:#000000;
+  font-size:14px;
+  font-weight:600;
+  padding:10px;
+}
+.notification-list {
+  font-weight:500;
+  color:black;
+  font-size:16px;
+  list-style: none;
+  padding:15px 5px 5px;
+  margin: 0px;
+}
+.notification-list li {
+  padding-bottom: 10px;
+}
+.hasSubMenu  {
+  /*color: cadetblue;
+  font-weight: bold;
+  font-size: 15px;*/
+  margin-left:5%;
+  font-size:14px;
+  font-weight: 200;
+}
+.memory-allocate-details {
+  margin-bottom:25px;
+}
+ul {
+  list-style: none;
+  display: block;
+  padding: 5px 10px;
+}
+.main-menu ul li{
+ /* color: #3A3C3D*/;
+  font-family: Segoe UI Regular;
+  font-size: 14px;
+  cursor: pointer;
+}
+.menuContainer {
+  position: relative;
+  flex: 1 1 auto;
+  transition: margin .2s ease;
+  z-index: 1;
+  width:500px;
+}
+.list-menu  {
+  width:auto;
+  min-width:300px !important;
+  vertical-align: initial;
+  height: 100%;
+}
+.divContainer {
+  overflow-x: auto;
+}
+.menuContainer td {
+  width:auto;
+  min-width:300px !important;
+  vertical-align: initial;
+  height: 500px;
+}
+.tdContainer {
+/*  min-width:240px;
+  max-width: 240px;
+  width:240px;*/
+}
+.resContainer {
+  width:auto;
+  min-width:300px !important;
+  padding: 8px;
+  color: white;
+  font-size: 18px;
+  border-bottom: 0px !important;
+ font-family: Segoe UI Semi Bold;
+  height:50px;
+  background: #532380;
+  border-right: 1px solid white;
+}
+.device-info {
+  padding: 8px;
+  font-size:18px;
+  font-family: Segoe UI Semi Bold;
+  background: #532380;
+  color:white;
+  border-bottom: 0px !important;
+  height:50px;
+  border-right: 1px solid white;
+}
+.device-info p {
+  margin-left: 30px;
+}
+
+.top-bar {
+  height: 40px;
+  position: fixed;
+  z-index: 250;
+  width:100%;
+  flex: 0 0 auto;
+  font-size: 13px;
+  background: #FFFFFF;
+  color: black;
+
+}
+
+.app-title {
+  width: auto;
+  height: 40px;
+  float: left;
+  padding-left:10px;
+  font-family: Segoe UI Semi Bold;
+  font-size: 20px;
+}
+.app-title a {
+  color: #00bcf2;
+  text-decoration: none;
+  flex: auto;
+  font-size: 20px;
+  padding: 0px 10px 0px 10px;
+  line-height: 35px;
+  height: 100%;
+  display: inline-block;
+}
+.app-right-section {
+  width: auto;
+  height: 40px;
+  float: right;
+  color:black;
+  cursor: pointer;
+}
+.app-right-section span {
+  padding: 10px;
+  font-size: 20px;
+}
+.dockContainer {
+  height: 100.5%;
+  top: 0px;
+}
+.active {
+  /*background:#c0effc;*/
+/*  background: #d3e255;*/
+  opacity: 0.8;
+  background: #898989;
+  color:white !important;
+}
+.color-black {
+  color:black;
+}
+
+.emulator-overview {
+  height:auto;
+}
+.saveEdit {
+  background: #03aee0;
+  color:white;
+}
+.hasInput   {
+  border:0 !important;
+}
+.rds-container {
+
+  height: calc(100% - 40px);
+  position: relative;
+  min-height: 0;
+  flex: 1 1 auto;
+  transition: margin .2s ease;
+  z-index: 1;
+}
+.rds-container td {
+  width:auto;
+  min-width:300px !important;
+  vertical-align: initial;
+  height: 500px;
+  border-right: 1px solid #686C6F;
+}
+label {
+  font-weight:100 !important;
+  margin-top: 4px;
+}
+.odata-table tr:last-child {
+  border-bottom: none !important;
+}
+.odata-table td {
+  padding:10px;
+  width:1%;
+}
+.odata-table {
+  width:100%;
+}
+ul:hover {
+ /* background: #f0f5c4;*/
+  background:  #e2e2e2;
+  color:black;
+}
+.device-info .btn {
+  background: none !important;
+  border: 0 !important;
+  color:white;
+}
+.hasChildren {
+  color:#7c42af;
+}
+list-menu {
+  display: flex !important;
+}
+.add-button  {
+  background: none !important;
+  border: 0 !important;
+  color:white;
+}
+.ok {
+  color: green !important;
+}
+spinner {
+  width: 75px !important;
+  height: 75px !important;
+  margin:100px !important;
+}
+.errorBlock {
+  margin: 30px;
+  padding: 10px;
+  color: red;
+  font-size: 16px;
+}
+.no-service {
+  text-align: center;
+  font-size: 24px;
+  color: black;
+  margin-top: 50px;
+}
+#addChildServices .list-menu .main-menu {
+  padding: 10px;
+  width:350px;
+}
+.resContainer .btn {
+  background: none !important;
+  border: 0 !important;
+  color: white;
+}
+/*.main-menu::-webkit-scrollbar-track {
+  border: 1px solid transparent;
+  background-color: #f5f5f5;
+  background-clip:content-box;
+}*/
+
+.main-menu::-webkit-scrollbar {
+  width: 7px;
+  height: 2px;
+}
+
+.main-menu::-webkit-scrollbar-thumb {
+  background: #CCCCCC;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+.main-menu::-webkit-scrollbar-corner {
+  background: transparent;
+}

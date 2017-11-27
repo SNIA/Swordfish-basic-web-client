@@ -1,0 +1,71 @@
+.signin {
+  color: white;
+  font-size: 18px;
+  background: #532380;
+  padding: 10px 50px;
+}
+.login-space {
+  background-color: whitesmoke;
+  margin: 100px 25%;
+  height: auto;
+  padding-bottom:25px;
+  width:auto;
+  position: absolute;
+}
+.login-space .logo_img {
+  margin: 10px 40%;
+  width: 20%;
+}
+.nav-bar-menu ul {
+  list-style: none;
+  display: inline-flex;
+  padding: 1px 10px;
+}
+.nav-bar-menu ul li {
+  padding: 1px 128px 7px 128px;
+  font-size: 22px;
+}
+.nav-bar-menu ul li a {
+  color: #a5a5a7;
+}
+.nav-bar-menu ul li {
+  border-bottom: 3px solid #a5a5a7;
+}
+.active a{
+  color: #532380 !important;
+}
+.active {
+  color: #532380 !important;
+  border-bottom: 3px solid #532380 !important;
+}
+.inactive {
+  color: #a5a5a7 !important;
+  border-bottom: 3px solid #a5a5a7 !important;
+}
+.inactive a {
+  color: #a5a5a7 !important;
+}
+
+.login-heading {
+  padding: 0px 10px 10px 10px;
+  font-size: 20px;
+  color: #a2a5a7;
+  font-weight: 400;
+}
+label {
+  color: gray;
+  font-size: 18px;
+  font-weight: 300;
+}
+.signin {
+  color: white;
+  font-size: 18px;
+  background: #532380;
+  padding: 10px 50px;
+}
+.fpwd {
+  color: #532380;
+  font-size: 18px;
+  padding: 10px 15px;
+  font-weight: 500;
+}

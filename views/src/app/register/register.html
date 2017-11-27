@@ -1,0 +1,73 @@
+<div class="login-heading">
+  <span>Create SNIA Account</span>
+</div>
+<div class="login-body">
+  <form class="form-horizontal" [formGroup]="registration">
+    <div class="form-group">
+      <label  class="col-sm-4 control-label">First Name</label>
+      <div class="col-sm-7">
+        <input  type="text" formControlName="firstName" class="form-control" [(ngModel)]="registerCredentials.firstName" [class.invalid]="!registration.controls.firstName.valid && (registration.controls.firstName.dirty)" />
+        <div *ngIf="!registration.controls.firstName.valid  && (registration.controls.firstName.dirty)">
+          <span>FirstName should not exceed 16 characters</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label  class="col-sm-4 control-label">Last Name</label>
+      <div class="col-sm-7">
+        <input  type="text" formControlName="lastName" class="form-control" [(ngModel)]="registerCredentials.lastName" [class.invalid]="!registration.controls.lastName.valid && (registration.controls.lastName.dirty)"/>
+        <div *ngIf="!registration.controls.lastName.valid  && (registration.controls.lastName.dirty)">
+          <span>LastName should not exceed 16 characters</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label  class="col-sm-4 control-label">Email Id</label>
+      <div class="col-sm-7">
+        <input  type="email" formControlName="emailId" class="form-control" [(ngModel)]="registerCredentials.email" [class.invalid]="!registration.controls.emailId.valid && (registration.controls.emailId.dirty)"/>
+        <div *ngIf="!registration.controls.emailId.valid  && (registration.controls.emailId.dirty)">
+          <span>Please enter a valid EmailId.</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label  class="col-sm-4 control-label">Password</label>
+      <div class="col-sm-7">
+        <input  type="password" formControlName="password" class="form-control" [(ngModel)]="registerCredentials.password" [class.invalid]="!registration.controls.password.valid && (registration.controls.password.dirty)"/>
+        <div *ngIf="!registration.controls.password.valid  && (registration.controls.password.dirty)">
+          <span>
+             Password Should contain atlease 1 lowercase letter,
+        1 upperCase letter,
+        number and a special Character(!,@,#,$,%,&,*) .
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label  class="col-sm-4 control-label">Re-enter Password</label>
+      <div class="col-sm-7">
+        <input  type="password" formControlName="password" class="form-control" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label  class="col-sm-4 control-label">Phone Number</label>
+      <div class="col-sm-7">
+        <input  type="text" formControlName="phoneNumber" class="form-control" [(ngModel)]="registerCredentials.phoneNumber" [class.invalid]="!registration.controls.phoneNumber.valid && (registration.controls.phoneNumber.dirty)"/>
+        <div *ngIf="!registration.controls.phoneNumber.valid  && (registration.controls.phoneNumber.dirty)">
+          <span>Phone Number should be of 10 digits only.</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label  class="col-sm-4 control-label">Company Name</label>
+      <div class="col-sm-7">
+        <input  type="text" formControlName="companyName" class="form-control" [(ngModel)]="registerCredentials.companyName"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-4 col-sm-8">
+        <button type="submit" class="btn  signin">Create an Account</button>
+      </div>
+    </div>
+  </form>
+</div>

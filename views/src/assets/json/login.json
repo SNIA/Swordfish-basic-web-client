@@ -1,0 +1,13 @@
+{
+  "userDetails":[
+    {
+      "firstName":"peopletech",
+      "lastName":"hyd",
+      "email":"snia@gmail.com",
+      "password":"snia@123",
+      "companyName":"PTG-HYD",
+      "phoneNumber":"9966332255",
+      "token":"token-admin"
+    }
+  ]
+}

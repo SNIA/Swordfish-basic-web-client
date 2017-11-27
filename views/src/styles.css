@@ -1,0 +1,186 @@
+/* You can add global styles to this file, and also import other style files */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+/*body {
+  background: #f8f7f7 !important;
+  overflow-x: hidden;
+}*/
+
+
+body {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+}
+.myPopover .popover-title{
+  font-size:18px !important;
+}
+.myPopover .popover-content .add{
+  border: 1px solid green;
+  color: green;
+  background: ghostwhite;
+  font-size: 18px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.myPopover .popover-content .remove{
+  border: 1px solid red;
+  color: red;
+  background: ghostwhite;
+  font-size: 18px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.emulator-accordian .card  {
+  border-right: 7px solid #c1c0c0 !important;
+}
+.emulator-accordian .panel-default>.panel-heading+.panel-collapse>.panel-body {
+  padding: 2px 0px !important;
+}
+.emulator-accordian   .panel {
+  border-radius: 0px !important;
+  border-bottom:none !important;
+  color:#7f7f7f !important;
+}
+.emulator-accordian  .panel-default>.panel-heading {
+  color: #7f7f7f !important;
+  background-color: transparent !important;
+}
+.open {
+  color:#532380;
+  font-size:18px;
+  font-weight:bolder;
+}
+.down {
+  color:#7f7f7f;
+  font-size:18px;
+  font-weight:bold;
+}
+.removeModal .modal-dialog {
+  width:450px !important;
+}
+.removeModal .modal-body{
+  padding: 10px 15px;
+}
+.removeModal .remove-txt {
+  padding:15px 0px;
+}
+.removeModal .warning {
+  color:orangered;
+}
+.removeModal .invalid {
+  border:2px solid orangered;
+}
+.removeModal  .modal-header {
+  border:0px !important;
+}
+.removeModal .cancel {
+  background: lightgrey;
+  border: none;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+}
+.removeModal .remove {
+  color:white;
+  border:none;
+  background: #E37222;
+  padding: 10px;
+  border-radius: 5px;
+}
+.progress-unused-color  .progress-bar-info{
+  background-color: #a2a5a7 !important;
+}
+.progress-bar {
+  font-size: 16px !important;
+  padding: 5px;
+}
+.panel-default>.panel-heading {
+  color: white;
+/*  background-color: grey;*/
+  background: #898989;
+  border-color: #ddd;
+  height: 30px !important;
+  padding: 5px !important;
+  font-size : 14px !important;
+  font-family: Segoe UI Semi Bold;
+}
+.pull-left {
+  float: left!important;
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
+  word-break: break-all;
+}
+.confirmModal .modal-dialog {
+  width: 345px;
+  margin:8% auto;
+}
+/*.confirmModal .modal-header {
+  border-bottom: none;
+}*/
+.confirmModal  .modal-footer {
+  border-top: none;
+}
+list-menu {
+  display: flex !important;
+}
+.loader .my-loader {
+  background-color: #532380;
+}
+.loader {
+  color: #0078d7;
+  font-size: 12px;
+  margin: 100px auto;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-animation: load4 1.3s infinite linear;
+  animation: load4 1.3s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.load-container {
+  display: none;
+  position: fixed;
+  z-index: 99999 !important;
+  top: 20%;
+  left: 48%;
+  width: 100px;
+}
+.ngLoader {
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background: rgba(82, 82, 86, 0.1) !important;
+  z-index: 1;
+}
+.sc-default-spinner {
+  width:25px !important;
+  height:25px !important;
+  background: #532380 !important;
+}
+.sc-center {
+  top:25% !important;
+}

@@ -1,0 +1,30 @@
+{
+  "data":[{
+    "title": "Systems",
+    "subtitle": ["437XR1138R2","437XR1138R3","437XR1138R3","437XR1138R4"]
+  },
+    {
+      "title": "Chassis",
+      "subtitle": ["1U","2U","3U"]
+    },
+    {
+      "title": "Managers",
+      "subtitle": ["BMC"]
+    },
+    {
+      "title": "TaskService",
+      "subtitle": []
+    },
+    {
+      "title": "SessionService",
+      "subtitle": []
+    },
+    {
+      "title": "AccountService",
+      "subtitle": []
+    },
+    {
+      "title": "EventService",
+      "subtitle": []
+    }
+  ]}

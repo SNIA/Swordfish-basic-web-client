@@ -1,0 +1,19 @@
+{
+  "data":[{
+    "deviceNo":"437XR1138R2",
+    "memory":"40",
+    "size":"GB"
+  },
+    {
+      "deviceNo":"437XR1138R3",
+      "memory":"15",
+      "size":"GB"
+    },
+    {
+      "deviceNo":"437XR1138R4",
+      "memory":"39",
+      "size":"GB"
+    }
+  ]
+}
+

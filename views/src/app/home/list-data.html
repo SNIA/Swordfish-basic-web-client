@@ -1,0 +1,134 @@
+
+<div class="list-menu" #dynamicCom id="dynamicCom">
+  <div class="resContainer">
+    <label> {{ CollectionName}}</label>
+    <span class="glyphicon glyphicon-remove" style="float: right;top:10px;font-size:14px;cursor:pointer" (click)="addServices=false;close()"></span>
+    <button  class="btn btn-default add-button" (click)="addServices=true" *ngIf="CollectionName === 'FileSystems' || CollectionName === 'Volumes' || CollectionName === 'StorageServices'">
+      <span class="glyphicon glyphicon-plus-sign"></span> Add
+    </button>
+    <button type="button" class="btn btn-default"  *ngIf="!showRemove" (click)="showRemove = !showRemove;">
+      <span class="glyphicon glyphicon-minus-sign"></span> Remove
+    </button>
+    <button type="button" class="btn btn-default" *ngIf="showRemove" (click)="showRemove = !showRemove">
+      <span class="glyphicon glyphicon-remove-sign"></span> Cancel
+    </button>
+  </div>
+  <div class="main-menu">
+    <ul *ngFor="let subdata of sysDetails let ind=index" [ngClass]="{'active':  show  === ind} ">
+
+      <li  (click)="createNew(subdata['@odata.id'],ind)">
+        <span  *ngIf="showRemove" class="glyphicon glyphicon-minus-sign" style="color:red"  (click)="removeCollService($event,subdata)"></span>
+        {{subdata['@odata.id'] | routeParams}}
+        <i class="pull-right float-xs-right glyphicon"
+           [ngClass]="{'glyphicon-chevron-up ac-heading': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
+      </li>
+    </ul>
+    <div style ="margin:25px 10px;width:500px">
+      <accordion>
+        <accordion-group  #group1 style="margin: 25px 30px;" [isOpen]="true">
+          <div accordion-heading>
+            <i class="pull-left float-xs-left glyphicon"
+               [ngClass]="{'glyphicon glyphicon-triangle-bottom':group1?.isOpen , 'glyphicon glyphicon-triangle-right': !group1?.isOpen}" ></i>
+            <span style="padding-left:5px">Properties</span>
+            <span  style="margin-right:8px" class="pull-right glyphicon glyphicon-refresh" (click)="refresh($event)"></span>
+            <span  style="margin-right:8px" class="pull-right glyphicon glyphicon-pencil" *ngIf="canUpdate  && !canEdit" (click)="canEdit = !canEdit;onEdit($event);group1.isOpen = true"></span>
+            <span style="margin-right:8px" class="pull-right glyphicon glyphicon-plus-sign" *ngIf="canAdd" (click)="onAdd($event);group1.isOpen = true;onAddProperty=true"></span>
+            <span  style="margin-right:8px" class="pull-right glyphicon glyphicon-remove" *ngIf="canEdit" (click)="canEdit = !canEdit;onCancelChanges($event);group1.isOpen = true"></span>
+            <span style="margin-right:8px" class="pull-right glyphicon glyphicon-save-file" *ngIf="canEdit" (click)="canEdit = !canEdit;showSavedData($event);group1.isOpen = true"></span>
+          </div>
+
+          <table>
+              <tr *ngFor="let data of dataToUpdate let ind = index">
+                <td style="width:50%" class="device-keys"  [ngClass]="{'hasChildren':data.isParent}" *ngIf="data.key !== 'Members' && data.key  && data.isParent && data.key !== 'Permissions' && data.key !== 'Links'"> {{data.key}}  </td>
+                <td style="width:50%" class="device-keys"  [ngClass]="{'hasSubMenu':data.parentKey}" *ngIf="data.key !== 'Members' && data.key && !data.isParent && data.key !== 'Permissions' "> {{data.key}} : </td>
+                <td *ngIf="!canEdit"><span style="font-size:14px"> {{data.value}}</span></td>
+                <td  *ngIf="canEdit && !data.isParent "><span><input type="text" [(ngModel)]="data.value" (ngModelChange)="sendData(data.key,data.value,data.parentKey,data.index,sampleData)"></span></td>
+              </tr>
+              <tr *ngIf="showNoData">
+                <td>
+                  No data found
+                </td>
+              </tr>
+          </table>
+        </accordion-group>
+        <accordion-group  #group2 style="margin: 25px 30px;">
+          <div accordion-heading>
+            <i class="pull-left float-xs-left glyphicon"
+               [ngClass]="{'glyphicon glyphicon-triangle-bottom':group2?.isOpen , 'glyphicon glyphicon-triangle-right': !group2?.isOpen}" ></i>
+            <span style="padding-left:5px">ODATA</span>
+          </div>
+          <table class="odata-table">
+
+            <tr *ngFor="let data of showMoreData let ind = index" style="border-bottom: 1px solid #1C1C1C">
+              <td class="device-keys" [ngClass]="{'hasSubMenu':i}"> {{data.key}}</td>
+              <td><span style="font-size:14px">{{data.value}}</span></td>
+            </tr>
+            <tr *ngIf="showNoData">
+              <td>
+                No data found
+              </td>
+            </tr>
+          </table>
+        </accordion-group>
+        <accordion-group  #group3 style="margin: 25px 30px;" >
+          <div accordion-heading>
+            <i class="pull-left float-xs-left glyphicon"
+               [ngClass]="{'glyphicon glyphicon-triangle-bottom':group3?.isOpen , 'glyphicon glyphicon-triangle-right': !group3?.isOpen}" ></i>
+            <span style="padding-left:5px">LINKS</span>
+          </div>
+          <table class="odata-table" >
+
+            <tr *ngFor="let data of showTotalLinks let ind = index" style="border-bottom: 1px solid #1C1C1C">
+              <td class="device-keys"  [ngClass]="{'hasSubMenu':i}"> {{data.key}}</td>
+              <td><span style="font-size:14px" *ngIf="data.link">{{data.link['@odata.id']}} </span></td>
+            </tr>
+            <tr *ngIf="showNoData">
+              <td>
+                No data found
+              </td>
+            </tr>
+          </table>
+        </accordion-group>
+      </accordion>
+    </div>
+  </div>
+</div>
+
+
+<div class="list-menu" *ngIf="addServices"  id="addChildServices" #addCollection >
+  <div class="resContainer">
+    <label>Add Collection</label>
+    <span class="glyphicon glyphicon-remove" style="float: right;top:10px;font-size:14px;cursor:pointer" (click)="addServices = false"></span>
+  </div>
+  <div class="main-menu">
+    <div style="padding:10px">
+      <div>
+        <form class="form-horizontal" [formGroup]="addService">
+          <div class="form-group">
+            <label  class="col-sm-5 control-label">Collection Name</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control"  formControlName="serviceName">
+            </div>
+          </div>
+        </form>
+      </div>
+     <!-- <div style="width:500px;margin-left:25px">
+        <h3 style="margin-left: 8px">Properties : </h3>
+        <tr *ngFor="let data of keyValues let ind = index">
+          <td style="width:50%" class="device-keys"  [ngClass]="{'hasChildren':data.isParent}" *ngIf="data.key !== 'Members' && data.key  && data.isParent && data.key !== 'Permissions' && data.key !== 'Links'"> {{data.key}}  </td>
+          <td style="width:50%" class="device-keys"  [ngClass]="{'hasSubMenu':data.parentKey}" *ngIf="data.key !== 'Members' && data.key && !data.isParent && data.key !== 'Permissions' "> {{data.key}} : </td>
+          <td  *ngIf="!data.isParent "><span><input type="text" [(ngModel)]="data.value" (ngModelChange)="sendData(data.key,data.value,data.parentKey,data.index,keyProperties)"></span></td>
+        </tr>
+      </div>-->
+      <div class="form-group" style="padding: 10px 0px">
+        <div class="col-sm-offset-5 col-sm-7">
+          <button type="submit" class="btn  signin" (click)="onAddServices();addServices=false " >Add</button>
+          <button type="submit" class="btn  signin" (click)="addServices = false"> Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <spinner-component [spinnerShow]="isLoading"></spinner-component>
+</div>

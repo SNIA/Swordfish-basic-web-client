@@ -1,0 +1,14 @@
+<div>
+<modal #cnfrmModal class="confirmModal" [keyboard]="false" [backdrop]="'static'" [animation]="false" (onDismiss)="closeModal()">
+  <modal-header [show-close]="true" (click)="closeModal()">
+    <h4 class="modal-title">Remove Swordfish Service</h4>
+  </modal-header>
+  <modal-body>
+    <div> Are You Sure You Want to Remove?</div>
+  </modal-body>
+  <modal-footer>
+    <button class="btn" (click)="deleteService()">Yes</button>
+    <button class="btn" (click)="closeModal()">No</button>
+  </modal-footer>
+</modal>
+</div>
