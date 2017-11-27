@@ -8,6 +8,8 @@ The Swordfish Basic Web Client can connect to one or more Swordfish services (in
 # Development server
 Run `cd views && npm install` for a dev server. It Install's all the dependencies in the local node_modules folder.By default, npm install will install all modules listed as dependencies in package.json ,for angular-cli project.
 
+Run cd..
+
 Run 'npm install' to add all the dependencies required to run node application.
 
 Run `npm start` after installation of dependencies. Navigate to `http://localhost:3000/`. 
