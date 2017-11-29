@@ -82,8 +82,8 @@
             if(res.headers['x-auth-token'] != null  ){
                 response.setHeader('X-Auth-Token',res.headers['x-auth-token']);
             }
-            if(res.headers['x-auth-token'] != null){
-                response.setHeader('Cookie',res.headers['x-auth-token']);
+            if(res.headers['set-cookie'] != null){
+                response.setHeader('Cookie-Headers',res.headers['set-cookie']);
             }
             return response.send(res);
         });
