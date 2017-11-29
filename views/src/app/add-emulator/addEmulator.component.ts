@@ -38,8 +38,7 @@ export class AddEmulatorComponent implements OnInit{
         };
         this.homeService.setIpAddress( this.addForm.value['sysName']);
         this.homeService.getAuthToken(credentials).subscribe(res => {
-          console.log(res);
-           this.homeService.setAuthHeader(res.headers.get('X-Auth-Token'),res.headers.get('set-cookie'));
+             this.homeService.setAuthHeader(res.headers.get('X-Auth-Token'),res.headers.get('Cookie-Headers'));
         });
     }
     public onRemove() {
