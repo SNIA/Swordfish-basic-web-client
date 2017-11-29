@@ -38,7 +38,11 @@
             uri: urlString,
             method: 'GET'
         }, function (err, res, body) {
-             return response.send(JSON.parse(body));
+              try {
+                 return response.send(JSON.parse(body));
+             } catch (e) {
+                return response.send({status:404});
+             }
         });
 	});
 	app.post('/addCollection', function(req, response) {
