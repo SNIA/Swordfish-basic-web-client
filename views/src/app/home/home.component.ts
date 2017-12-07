@@ -1,6 +1,4 @@
-/**
- * Created by Sravanthi on 4/24/2017.
- */
+
 
 import {Component, ViewChild, ViewContainerRef, ComponentFactoryResolver, ElementRef} from '@angular/core';
 import {Router} from '@angular/router';
