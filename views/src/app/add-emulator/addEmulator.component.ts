@@ -1,6 +1,3 @@
-/**
- * Created by Sravanthi on 4/26/2017.
- */
 import {Component, OnInit, Input,  Output,EventEmitter} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {HomeService} from "../home/shared/home.service";
