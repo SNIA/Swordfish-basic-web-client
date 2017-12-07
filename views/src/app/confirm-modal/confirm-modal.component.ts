@@ -1,6 +1,4 @@
-/**
- * Created by Sravanthi on 6/13/2017.
- */
+
 import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from "@angular/core";
 import {ModalComponent} from "ng2-bs3-modal/ng2-bs3-modal";
 
