@@ -1,6 +1,4 @@
-/**
- * Created by Sravanthi on 5/3/2017.
- */
+
 import { PipeTransform, Pipe } from '@angular/core';
 
 @Pipe({name: 'routeParams'})
