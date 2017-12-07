@@ -1,6 +1,4 @@
-/**
- * Created by Sravanthi on 5/8/2017.
- */
+
 import {Component, Output, EventEmitter, OnInit} from '@angular/core';
 import {KeysPipe} from '../pipes/key-value';
 import {HomeService} from './shared/home.service';
