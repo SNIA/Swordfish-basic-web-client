@@ -1,6 +1,4 @@
-/**
- * Created by Sravanthi on 4/25/2017.
- */
+
 
 import {Component, ViewChild, AfterViewInit, OnInit} from '@angular/core';
 import {Popover, PopoverContent, PopoverModule} from "ngx-popover";
