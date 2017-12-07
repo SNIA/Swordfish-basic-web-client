@@ -1,6 +1,4 @@
-/**
- * Created by Sravanthi on 4/24/2017.
- */
+
 import { Component } from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 
