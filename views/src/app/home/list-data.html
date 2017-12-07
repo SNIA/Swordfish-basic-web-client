@@ -6,7 +6,7 @@
     <button  class="btn btn-default add-button" (click)="addServices=true" *ngIf="CollectionName === 'FileSystems' || CollectionName === 'Volumes' || CollectionName === 'StorageServices'">
       <span class="glyphicon glyphicon-plus-sign"></span> Add
     </button>
-    <button type="button" class="btn btn-default"  *ngIf="!showRemove" (click)="showRemove = !showRemove;">
+    <button type="button" class="btn btn-default"  *ngIf="!showRemove && sysDetails.length > 0" (click)="showRemove = !showRemove;">
       <span class="glyphicon glyphicon-minus-sign"></span> Remove
     </button>
     <button type="button" class="btn btn-default" *ngIf="showRemove" (click)="showRemove = !showRemove">
