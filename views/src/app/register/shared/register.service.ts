@@ -1,6 +1,4 @@
-/**
- * Created by Sravanthi on 4/27/2017.
- */
+
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import {Http, Response} from "@angular/http";
