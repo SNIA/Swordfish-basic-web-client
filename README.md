@@ -10,6 +10,9 @@ Install Node.js® and npm if they are not already on your machine.
 Verify that you are running at least node 8.9.x and npm 5.x.x by running node -v and npm -v in a terminal/console window. Older versions produce errors, but newer versions are fine.
 
 Run commands.bat file to install angular-cli and express globally.
+OR 
+run npm install -g express
+run npm install -g @angular/cli@latest
 
 # Development server
 Run `cd views && npm install` for a dev server. It Install's all the dependencies in the local node_modules folder.By default, npm install will install all modules listed as dependencies in package.json ,for angular-cli project.
