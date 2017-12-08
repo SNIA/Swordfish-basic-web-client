@@ -7,7 +7,7 @@ The Swordfish Basic Web Client can connect to one or more Swordfish services (in
 
 # Prerequisites
 Install Node.js® and npm if they are not already on your machine.
-Verify that you are running at least node 8.9.x and npm 5.x.x by running node -v and npm -v in a terminal/console window. Older versions produce errors, but newer versions are fine.
+Verify that you are running at least node 8.x.x and npm 5.x.x by running node -v and npm -v in a terminal/console window. Older versions produce errors, but newer versions are fine.
 
 Run commands.bat file to install angular-cli and express globally.
 OR 
