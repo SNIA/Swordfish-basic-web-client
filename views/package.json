@@ -1,7 +1,7 @@
 {
   "name": "SNIA-Web-Client",
   "version": "0.0.0",
-  "license": "BSD 3-clause",
+  "license": "MIT",
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
