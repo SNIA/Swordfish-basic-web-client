@@ -27,16 +27,10 @@ Run `npm start` after installation of dependencies. Now, after successful build 
 Navigate to `http://localhost:3000/`.
 
 Supported Browsers:
-Browser	Version
-Chrome	Latest
-Firefox	Latest
-IE	9,10,11
-Edge	14,13
-Safari	7,8,9,10
-IOS	7,8,9,10
-Android	Nougat (7.0),
-Marshmallow (6.0),
-Lollipop (5.0, 5.1),
-KitKat (4.4),
-Jelly Bean (4.1, 4.2, 4.3)
-IE Mobile	11
+
+Chrome( Latest version), Firefox(Latest version), IE	(Versions 9,10,11 ), Edge	(V14,13),Safari	(V7,8,9,10), IOS	(V7,8,9,10),Android	Nougat (V7.0),
+Marshmallow (V6.0),
+Lollipop (V5.0, 5.1),
+KitKat (V4.4),
+Jelly Bean (V4.1, 4.2, 4.3),
+IE Mobile	(V11)
