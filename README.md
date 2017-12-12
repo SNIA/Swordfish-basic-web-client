@@ -14,11 +14,29 @@ OR
 Run `npm install -g express`
 Run `npm install -g @angular/cli@latest`
 
-# Development server
-Run `cd views && npm install` for a dev server. It Install's all the dependencies in the local node_modules folder.By default, npm install will install all modules listed as dependencies in package.json ,for angular-cli project.
+# Web Client Installation
+
+Run `cd views && npm install` for a dev server. It Install's all the dependencies in the local node_modules folder , specified in angular-cli package.json file
 
 Run `cd..`
+Run `npm install` to add all the dependencies required to run node application as specified in node package.json file.
 
-Run `npm install` to add all the dependencies required to run node application.
 
-Run `npm start` after installation of dependencies. Navigate to `http://localhost:3000/`. 
+Run `npm start` after installation of dependencies. Now, after successful build ,SNIA basic web client will run in browser's  `localhost` accessible from port number `3000`.
+
+Navigate to `http://localhost:3000/`.
+
+Supported Browsers:
+Browser	Version
+Chrome	Latest
+Firefox	Latest
+IE	9,10,11
+Edge	14,13
+Safari	7,8,9,10
+IOS	7,8,9,10
+Android	Nougat (7.0),
+Marshmallow (6.0),
+Lollipop (5.0, 5.1),
+KitKat (4.4),
+Jelly Bean (4.1, 4.2, 4.3)
+IE Mobile	11
