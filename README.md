@@ -26,9 +26,9 @@ Run the below commands in terminal/console window.
      This runs an arbitrary command specified in the package.json's  "start" property of its "scripts" object.Npm scripts let you group together and run logically related commands and establishes a development server to execute the  code , launches the application on browser. <br />
      
   4. Open `http://localhost:3000/` in your browser to access the Web Client. <br />
-   `npm start` will launch the application on browser's  http protocal and localhost as IPaddress  on port 4200 <br />
+   `npm start` will launch the application on browser's  http protocol and localhost as IPaddress  on port 3000 <br />
   
-# Credentials to access the Web Client:
+# Default Credentials to access the Web Client:
   Username: snia@gmail.com<br />
   Password: snia@123
   
