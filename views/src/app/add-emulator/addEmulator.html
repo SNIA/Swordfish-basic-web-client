@@ -1,0 +1,37 @@
+<div style="padding-top:10px">
+      <div>
+        <form class="form-horizontal" [formGroup]="addForm">
+          <div class="form-group">
+            <label  class="col-sm-4 control-label">IP Address:port</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control"  formControlName="sysName" placeholder="14.12.15.16:5000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label  class="col-sm-4 control-label">Domain Name</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control"  formControlName="domainName" placeholder="Domain Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label  class="col-sm-4 control-label">User Name</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control"  formControlName="userName" placeholder="User Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label  class="col-sm-4 control-label">Password</label>
+            <div class="col-sm-7">
+              <input type="password" class="form-control"  formControlName="password" placeholder="Password">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-8">
+          <button type="submit" class="btn" (click)="onAddDevice()" [disabled]="!addForm.valid">Add</button>
+          <button type="submit" class="btn " (click)="closeModal()"> Cancel</button>
+        </div>
+      </div>
+</div>
+

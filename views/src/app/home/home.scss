@@ -1,0 +1,150 @@
+home{
+  .header {
+    display: block;
+    background: #532380;
+    padding: 0px;
+    margin: 0px;
+    height: 50px;
+  }
+}
+.header {
+  display: block;
+  background: #532380;
+  padding: 14px;
+}
+.header span {
+  color:white;
+  font-size:24px;
+}
+.right-menu {
+  float:right;
+}
+.right-menu span {
+  padding:0px 25px;
+}
+.home-content {
+  margin: 100px;
+
+  border-radius: 3px;
+  border: 1px solid silver;
+}
+.label-heading {
+  background: #d0db63;
+  font-size: 18px;
+  color:#2f2f2f;
+}
+.label-heading label {
+  padding:7px 10px;
+}
+
+.sub-list-menu li {
+  display: block;
+  border: 1px solid silver;
+  padding: 10px;
+  margin-bottom: 1px;
+}
+.sub-list-menu {
+  margin-bottom:3px !important;
+  font-weight:500;
+  font-size:16px;
+}
+.openSubMenu {
+  color:white;
+  background: #532380;
+}
+.emulator-details  {
+  padding: 30px 20px;
+  line-height: 2;
+}
+.device-menu {
+  background: transparent;
+  border: none;
+}
+.myPopover .popover-title{
+  font-size:18px !important;
+}
+.myPopover .popover-content .add{
+  border: 1px solid green;
+  color: green;
+  background: ghostwhite;
+  font-size: 18px;
+  padding: 10px;
+  width: 100%;
+}
+.myPopover .popover-content .remove{
+  border: 1px solid red;
+  color: red;
+  background: ghostwhite;
+  font-size: 18px;
+  padding: 10px;
+  width: 100%;
+}
+.device-storage {
+  margin:25px 10%;
+  display: grid;
+}
+.system-space {
+  width: 50%;
+  height: auto !important;
+  margin: 10px auto;
+  border: 1px solid silver;
+  padding: 10px;
+}
+.progress-unused-color  .progress-bar-info{
+  background-color: #a2a5a7 !important;
+}
+.memory-allocate {
+  height:40px !important ;
+  margin:10px 2%;
+  word-wrap: break-word;
+}
+.progress-text {
+  overflow: hidden;
+  display:flex;
+}
+.memory-alo-details {
+  border-left: 5px solid silver;
+  color: silver;
+  padding:0px 4px;
+  word-wrap: break-word;
+  line-height: 1;
+}
+h5 {
+  color: #a2a5a7;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+.ac-heading {
+  color:#532380;
+  font-weight:bolder;
+}
+.device-keys {
+  color:#000000;
+  font-size:16px;
+  font-weight:600;
+}
+.notification-list {
+  font-weight:500;
+  color:black;
+  font-size:16px;
+  list-style: none;
+  padding:15px 5px 5px;
+}
+.notification-list li {
+  padding-bottom: 10px;
+}
+.hasSubMenu  {
+  color: cadetblue;
+  font-weight: bold;
+  font-size: 15px;
+}
+.memory-allocate-details {
+  margin-bottom:25px;
+}
+/*
+spinner {
+  width: 25% !important;
+  height: 25% !important;
+}
+*/

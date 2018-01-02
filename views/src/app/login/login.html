@@ -1,0 +1,37 @@
+
+<div class="login-space">
+  <img src="assets/images/SNIA_logo.png" alt="SNIA_logo" class="logo_img"/>
+  <div class="nav-bar-menu">
+    <ul>
+      <li  [ngClass]="{'active':isactive}">  <a (click)="isactive= !isactive">Login</a> </li>
+      <li  [ngClass]="{'active':!isactive}"><a (click)="isactive= !isactive">Register</a></li>
+    </ul>
+  </div>
+  <div class="login-heading" *ngIf="isactive">
+    <span>Login into SNIA Account</span>
+  </div>
+    <div class="login-body" *ngIf="isactive">
+      <form class="form-horizontal" [formGroup]="loginForm">
+        <div class="form-group">
+          <label  class="col-sm-4 control-label">Email</label>
+          <div class="col-sm-7">
+            <input type="email" class="form-control" formControlName="email" >
+          </div>
+        </div>
+        <div class="form-group">
+          <label  class="col-sm-4 control-label">Password</label>
+          <div class="col-sm-7">
+            <input type="password" class="form-control" formControlName="password" >
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-4 col-sm-8">
+            <button type="submit" class="btn  signin" (click)="getToken()" >Sign in</button>
+            <a class="fpwd" href="">Forgot Password? </a>
+          </div>
+        </div>
+      </form>
+    </div>
+    <app-register *ngIf="!isactive"></app-register>
+</div>
+

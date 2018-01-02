@@ -1,0 +1,96 @@
+<div class="top-bar">
+  <div class="app-title">
+    <a  href="#" (click)="home()">
+      <img src="assets/images/snia-logo.png" alt="SNIA_logo" class="logo_img" height="65%" />
+    </a>
+    <span *ngIf="deviceName" style="color:black;font-size:14px;cursor:pointer" (click)="homePage(deviceName,domainName)"> {{domainName}}</span>
+    <span style="padding-left:10px">
+        <span *ngFor="let bc of breadCrums let i=index" style="color: black;font-size: 16px;"> >
+          <a style="cursor: pointer;color:black;font-size: 16px;" (click)="create(bc,i,show,breadCrumKey)"  [ngClass]="{'color-black': i }">
+              {{bc | routeParams}} {{getName(bc)}} </a>
+        </span>
+    </span>
+  </div>
+  <div  class="app-right-section width200">
+    <span class="glyphicon glyphicon-log-out" (click)="logout()"></span>
+  </div>
+  <div class="app-right-section width200">
+    <span class="glyphicon glyphicon-user"></span>
+  </div>
+  <div class="app-right-section width200">
+    <span class="glyphicon glyphicon-bell" [popover]="notifications"></span>
+    <popover-content #notifications class="notifications"
+                     [closeOnMouseOutside]="true"
+                     [closeOnClickOutside]="true">
+      <ul class="notification-list">
+        <li>Total Space: {{total_disk_space/1073741824}}GB</li>
+        <li>Used Space: {{used_space/1073741824}}GB</li>
+        <li>Available Disk Space : {{available_space/1073741824}}GB</li>
+      </ul>
+    </popover-content>
+  </div>
+</div>
+
+<div style="width:auto;height:100%;padding-top:40px;display:-webkit-box;background: #f1f1f1" id="menuCont">
+  <div class="rds-container" style="display: inline-flex">
+    <div class="list-menu">
+      <div class="device-info" style="display: inline-flex;width:310px">
+        <label>Swordfish Service</label>
+        <div style=" float:right;cursor: pointer;margin-top:4px;font-size:16px">
+          <button  class="btn btn-default" (click)="onAddDevice();showRemove=false">
+            <span class="glyphicon glyphicon-plus-sign"></span> Add
+          </button>
+          <button type="button" class="btn btn-default"  *ngIf="!showRemove" (click)="showRemove=true;showMainMenu=false;deviceName = null;breadCrums = [];addDevice=false;">
+            <span class="glyphicon glyphicon-minus-sign"></span> Remove
+          </button>
+          <button type="button" class="btn btn-default" *ngIf="showRemove" (click)="showRemove=false;showMainMenu=false;">
+            <span class="glyphicon glyphicon-remove-sign"></span> Cancel
+          </button>
+        </div>
+      </div>
+      <div class="main-menu"  *ngIf="DeviceInfo.length > 0">
+        <ul [ngClass]="{'active':  sh  === i && !showRemove && showMainMenu} " *ngFor="let data of DeviceInfo let i=index">
+          <li (click)="homePage(data.IPAddress,data.DomainName); sh = i">
+            <span  *ngIf="showRemove" class="glyphicon glyphicon-minus-sign" style="color:red"  (click)="canRemove($event,data)"></span>
+            {{data.DomainName}}
+            <span class="pull-right float-xs-right glyphicon" *ngIf="!showRemove"
+                  [ngClass]="{'glyphicon-chevron-up ac-heading': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></span>
+          </li>
+        </ul>
+      </div>
+	   <div  class="main-menu" *ngIf="DeviceInfo.length <= 0">
+        <div class="no-service">No Service's are avilable</div>
+      </div>
+    </div>
+    <div class="list-menu" *ngIf="addDevice" [style.width.px]="400" #AddContent>
+      <div class="resContainer">
+        <label>Add Swordfish Service</label>
+        <span class="glyphicon glyphicon-remove" style="float: right;top:10px;font-size:14px;cursor:pointer" (click)="onAddClose()"></span>
+      </div>
+      <div class="main-menu">
+        <addEmulator-modal #aaa [DeviceInfo]="DeviceInfo" (IPInfo)="IPInfo($event)" toggleAddModal="toggleAddModal($event)"></addEmulator-modal>
+      </div>
+    </div>
+    <div #dynamicCom *ngIf="showMainMenu" class="list-menu" id="dynamicCom">
+      <div class="resContainer" >
+        <label>Explore The Resources</label>
+        <span class="glyphicon glyphicon-remove" style="float: right;top:10px;font-size:14px;cursor:pointer" (click)="home()"></span>
+      </div>
+      <div *ngIf="!resourcesMenu" class="main-menu">
+        <div class="errorBlock">{{showError}}</div>
+      </div>
+      <div class="main-menu">
+        <ul *ngFor="let data of resourcesMenu|keys  let i=index" [ngClass]="{'active':  show  === i} ">
+          <li  (click)="create(data.value['value'],0,i,data.key)" >{{data.key}}
+            <i class="pull-right float-xs-right glyphicon"
+               [ngClass]="{'glyphicon-chevron-up ac-heading': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<confirm-modal  *ngIf="cnfrmRemove" [DeviceInfo]="DeviceInfo" [serviceToRemove]="serviceToRemove" (toggleCnfmModel)="toggleCnfmModel($event)"></confirm-modal>
+<div>
+  <spinner-component [spinnerShow]="isLoading"></spinner-component>
+</div>

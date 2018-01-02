@@ -1,0 +1,88 @@
+{
+  "AccessCapabilities": [
+    "read",
+    "Write"
+  ],
+  "BlockSizeBytes": "8192",
+  "Capacity": [
+    {
+      "Data": {
+        "AllocatedBytes": 1000000000000,
+        "ConsumedBytes": 500000000000,
+        "ProvisionedBytes": 3000000000000
+      },
+      "Snapshot": {
+        "AllocatedBytes": 0,
+        "ConsumedBytes": 0,
+        "ProvisionedBytes": 0
+      }
+    }
+  ],
+  "CapacitySources": [
+    {
+      "ProvidedCapacity": {
+        "Data": {
+          "AllocatedBytes": 1000000000000,
+          "ConsumedBytes": 500000000000,
+          "ProvisionedBytes": 3000000000000
+        },
+        "MetaData": {
+          "AllocatedBytes": 0,
+          "ConsumedBytes": 0,
+          "ProvisionedBytes": 0
+        },
+        "Snapshot": {
+          "AllocatedBytes": 0,
+          "ConsumedBytes": 0,
+          "ProvisionedBytes": 0
+        }
+      },
+      "ProvidedClassOfService": {
+        "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldBoston"
+      },
+      "ProvidingPools": {
+        "@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools/SpecialPool/ProvidingPools"
+      }
+    }
+  ],
+  "CasePreserved": false,
+  "CaseSensitive": false,
+  "CharacterCodeSet": [
+    "ASCII",
+    "Unicode"
+  ],
+  "ClusterSizeBytes": 256,
+  "Description": "Root FileSystem, not replicated.",
+  "ExportedShares": [
+    {
+      "CASupported": true,
+      "ExecuteSupport": true,
+      "FileSharingProtocols": [
+        "SMBv3_1_1"
+      ],
+      "Links": {
+        "EthernetInterfaces": {
+          "@odata.id": "/redfish/v1/StorageServices/FileServer/EthernetInterfaces/1"
+        },
+        "FileSystem": {
+          "@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1/ProvidedPools"
+        }
+      },
+      "Name": "MyShare",
+      "RootAccess": true,
+      "Status": {
+        "Health": "OK",
+        "HealthRollUp": "OK",
+        "State": "Enabled"
+      }
+    }
+  ],
+  "Id": "FS1",
+  "Links": [],
+  "LowSpaceWarningThresholdPercents": [
+    60,
+    90
+  ],
+  "MaxFileNameLengthBytes": 256,
+  "Name": "Root"
+}
