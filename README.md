@@ -13,15 +13,25 @@ OR<br />
 Run the following commands in terminal/console window.<br />
   • 	`npm install -g express`,<br />
   •	  `npm install -g @angular/cli@latest`
+  
 # Web Client Installation
 Run the below commands in terminal/console window.
   1. `cd views && npm install`
+     `cd views` changes the current working directory(project) path to views folder where angular application resides, `npm install`  will install all modules listed as dependencies in  `package.json` in to the local `node_modules` folder.  which are required to run the angular application.
+     
   2. `cd.. && npm install`
+     `cd..` reverts the path from views folder to project folder. `npm install`  install all modules listed as dependencies in project's `package.json` in to the local `node_modules` folder required to run the node application.
+     
   3. `npm start`
+     This runs an arbitrary command specified in the package.json's  "start" property of its "scripts" object.Npm scripts let you group together and run logically related commands and establishes a development server to execute the  code , launches the application on browser.
+     
   4. Open `http://localhost:3000/` in your browser to access the Web Client.
+   `npm start` will launch the application on browser's  http protocal and localhost as IPaddress  on port 4200
+  
 # Credentials to access the Web Client:
   Username: snia@gmail.com<br />
   Password: snia@123
+  
 # Supported Browsers
 1.	Chrome( Latest version), 
 2.	Firefox(Latest version), 
