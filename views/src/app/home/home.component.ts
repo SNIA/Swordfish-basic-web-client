@@ -85,7 +85,7 @@ export class HomeComponent   {
   IPInfo(data: any) {
     if(data.IPAddress) {
      this.DeviceInfo.push(data);
-     localStorage.setItem("DeviceInfo",JSON.stringify(this.DeviceInfo));
+     sessionStorage.setItem("DeviceInfo",JSON.stringify(this.DeviceInfo));
     }
     this.addDevice = false;
   }
@@ -123,7 +123,7 @@ export class HomeComponent   {
       },
         (error) => {
           this.isLoading = false;
-          this.showError = "Something Went Wrong";
+          this.showError = "Your Connection was " + error.statusText;
         },
       );
       this.breadCrums = [];

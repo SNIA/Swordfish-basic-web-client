@@ -50,7 +50,7 @@ export class HomeService {
       let sysInfo =  this.DEVICE_URL + type ;
       let headers = new Headers();
       headers.append('X-Auth-Token',this.token);
-      headers.append('Cookie-Headers',this.cookieId);
+      headers.append('Cookie-Headers',sessionStorage.getItem(this.DEVICE_URL.replace('http://','')));
       return this.http.get( '/getCollectionData?Ip='+sysInfo,{headers:headers}).map((res: Response) => {
         if ( res.status < 200 || res.status >= 300) {
           throw new Error('This request has failed ' + res.status);
@@ -61,7 +61,7 @@ export class HomeService {
       });
     }
     getIPAddress() {
-      return  localStorage.getItem('DeviceInfo');
+      return  sessionStorage.getItem('DeviceInfo');
     }
     getAuthToken(data:any) {
       let postUrl = this.DEVICE_URL + "/redfish/v1/SessionService/Sessions";

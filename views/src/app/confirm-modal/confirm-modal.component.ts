@@ -47,9 +47,9 @@ export class ConfirmModalComponent implements OnInit {
       this.modal.close();
     }
     deleteService() {
-      let servicesDetails = JSON.parse(localStorage.getItem('DeviceInfo'));
+      let servicesDetails = JSON.parse(sessionStorage.getItem('DeviceInfo'));
       servicesDetails.splice(this.DeviceInfo.indexOf(this.serviceToRemove),1);
-      localStorage.setItem('DeviceInfo',JSON.stringify(servicesDetails));
+      sessionStorage.setItem('DeviceInfo',JSON.stringify(servicesDetails));
       this.DeviceInfo.splice(this.DeviceInfo.indexOf(this.serviceToRemove),1);
       this.toggleCnfmModel.emit({'data':this.DeviceInfo,'toDel':false});
       this.modal.close();

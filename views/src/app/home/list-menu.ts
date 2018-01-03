@@ -149,11 +149,13 @@ export class ListMenuComponent implements OnInit {
       });
       this.isLoading = false;
     },
-      (error) => this.handleError(error)
+      (error) => {
+        this.showNoData = true;
+        this.isLoading = false;
+      },
     );
   }
   handleError(error:any) {
-    console.log(error);
     this.showNoData = true;
     this.isLoading = false;
   }

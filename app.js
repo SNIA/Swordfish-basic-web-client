@@ -62,10 +62,13 @@
             uri: urlString,
             method: 'GET'
         }, function (err, res, body) {
+		     if(err) {
+                 return response.status(502).send({ error: err.code + ': Connection refused' })
+             }
              try {
                  return response.send(JSON.parse(body));
              } catch (e) {
-                return response.send({status:404});
+                return response.status(403).send({ error: ' Connection refused' })
              }
         });
 	});
@@ -79,7 +82,6 @@
             },
         }, function (err, res) {
             if(err) {
-                console.log(err);
                 return err;
             }
             return response.send(res);
@@ -111,6 +113,18 @@
             method: 'POST',
             json: cred
         }, function (err, res) {
+            if(err) {
+
+                if(err.code == 'ENOTFOUND') {
+                    return response.status(502).send({ error: err.code + ': Invalid IPAddress/port' })
+                }
+                else if(err.code == 'ECONNREFUSED') {
+                    return response.status(502).send({ error: err.code + ': Connection refused' })
+                }
+                else{
+                    return response.status(502).send({ error: err.code  })
+                }
+            }
             if(res.headers['x-auth-token'] != null  ){
                 response.setHeader('X-Auth-Token',res.headers['x-auth-token']);
             }

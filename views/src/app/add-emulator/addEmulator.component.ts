@@ -52,15 +52,22 @@ export class AddEmulatorComponent implements OnInit{
     this.IPInfo.emit({'value': false});
   }
     onAddDevice() {
-        this.IPInfo.emit({'IPAddress': this.addForm.value['sysName'],'DomainName':this.addForm.value['domainName']});
+
         let credentials = {
           "UserName":this.addForm.value['userName'],
           "Password": this.addForm.value['password']
         };
         this.homeService.setIpAddress( this.addForm.value['sysName']);
         this.homeService.getAuthToken(credentials).subscribe(res => {
-           this.homeService.setAuthHeader(res.headers.get('X-Auth-Token'),res.headers.get('Cookie-Headers'));
-        });
+            this.homeService.setAuthHeader(res.headers.get('X-Auth-Token'),res.headers.get('Cookie-Headers'));
+            sessionStorage.setItem(this.addForm.value['sysName'],res.headers.get('Cookie-Headers'));
+            this.IPInfo.emit({'IPAddress': this.addForm.value['sysName'],'DomainName':this.addForm.value['domainName']});
+        },
+          (error) => {
+            alert(error);
+            this.addForm.reset();
+          })
+        ;
     }
     public onRemove() {
        if(this.remove.valid) {
