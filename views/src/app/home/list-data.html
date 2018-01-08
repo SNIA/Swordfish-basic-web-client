@@ -13,7 +13,7 @@
       <span class="glyphicon glyphicon-remove-sign"></span> Cancel
     </button>
   </div>
-  <div class="main-menu">
+  <div class="main-menu" *ngIf="!showNoData">
     <ul *ngFor="let subdata of sysDetails let ind=index" [ngClass]="{'active':  show  === ind} ">
 
       <li  (click)="createNew(subdata['@odata.id'],ind)">
@@ -44,11 +44,11 @@
                 <td *ngIf="!canEdit"><span style="font-size:14px"> {{data.value}}</span></td>
                 <td  *ngIf="canEdit && !data.isParent "><span><input type="text" [(ngModel)]="data.value" (ngModelChange)="sendData(data.key,data.value,data.parentKey,data.index,sampleData)"></span></td>
               </tr>
-              <tr *ngIf="showNoData">
+             <!-- <tr *ngIf="showNoData">
                 <td>
                   No data found
                 </td>
-              </tr>
+              </tr>-->
           </table>
         </accordion-group>
         <accordion-group  #group2 style="margin: 25px 30px;">
@@ -63,11 +63,11 @@
               <td class="device-keys" [ngClass]="{'hasSubMenu':i}"> {{data.key}}</td>
               <td><span style="font-size:14px">{{data.value}}</span></td>
             </tr>
-            <tr *ngIf="showNoData">
+            <!--<tr *ngIf="showNoData">
               <td>
-                No data found
+               No data found
               </td>
-            </tr>
+            </tr>-->
           </table>
         </accordion-group>
         <accordion-group  #group3 style="margin: 25px 30px;" >
@@ -82,15 +82,20 @@
               <td class="device-keys"  [ngClass]="{'hasSubMenu':i}"> {{data.key}}</td>
               <td><span style="font-size:14px" *ngIf="data.link">{{data.link['@odata.id']}} </span></td>
             </tr>
-            <tr *ngIf="showNoData">
+           <!-- <tr *ngIf="showNoData">
               <td>
                 No data found
               </td>
-            </tr>
+            </tr>-->
           </table>
         </accordion-group>
       </accordion>
     </div>
+  </div>
+  <div class="main-menu" *ngIf="showNoData">
+    <div class="error-message">Your Connection was interpreted with following </div>
+    <div class="error-message"> Status Code : <span> {{ statusCode}} </span></div>
+    <div class="error-message"> Error : <span> {{statusText}} </span> </div>
   </div>
 </div>
 

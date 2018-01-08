@@ -23,26 +23,20 @@
  THE POSSIBILITY OF SUCH DAMAGE.
  */
 'use strict'
-
     const bodyParser = require('body-parser');
     const express = require('express');
     const app = express();
-
     var cors = require('cors');
     var http = require('http');
     var path = require('path');
     var request = require('request');
     var port = '4200';
     http.createServer(function(req, res) {});
-
-
     app.use(bodyParser.json());
     app.use(cors());
     app.set('port',port);
-
     app.use(express.static(path.join(__dirname, "views/dist")));
     app.use(express.static(path.join(__dirname, '/node_modules')));
-
     app.use(function(req, res, next) {
         res.header('Access-Control-Allow-Origin', '*');
         res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept,X-Auth-Token,Cookie-Headers');
@@ -50,8 +44,6 @@
         res.header('Allow','HEAD, GET, PATCH, POST, OPTIONS, DELETE');
         next();
     });
-
-
 	app.get('/getCollectionData', function(req, response){
         var urlString = req.query.Ip;
 		 request({
@@ -63,12 +55,21 @@
             method: 'GET'
         }, function (err, res, body) {
 		     if(err) {
-                 return response.status(502).send({ error: err.code + ': Connection refused' })
+		         console.log(err);
+                  if(err.code == 'ECONNREFUSED') {
+                     return response.status(502).send({ error: err.code + ': Connection refused' })
+                 }
+                 else if(err.code == 'ETIMEDOUT ') {
+                     return response.status(502).send({ error: err.code + ': Connection Timed Out' })
+                 }
+                 else{
+                     return response.status(502).send({ error: err.code  })
+                 }
              }
              try {
                  return response.send(JSON.parse(body));
              } catch (e) {
-                return response.status(403).send({ error: ' Connection refused' })
+                return response.status(404).send({ error: ' Connection refused' })
              }
         });
 	});
@@ -102,7 +103,6 @@
 			return response.send(res);
 		});
 	});
-
 	app.post('/getCookie', function(req, response) {
 		var cred = {
 			UserName:req.body.UserName,
@@ -114,7 +114,6 @@
             json: cred
         }, function (err, res) {
             if(err) {
-
                 if(err.code == 'ENOTFOUND') {
                     return response.status(502).send({ error: err.code + ': Invalid IPAddress/port' })
                 }
@@ -137,7 +136,6 @@
             return response.send(res);
         });
 	});
-
 	app.delete('/deleteService',function(req,response) {
         var urlString = req.query.Ip;
         request({

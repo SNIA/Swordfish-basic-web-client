@@ -60,6 +60,8 @@ export class ListMenuComponent implements OnInit {
   public isLoading:any;
   public showTotalLinks:any =[];
   public showRemove:any = false;
+  public statusCode :any;
+  public statusText:any;
 
    public addService = this.formBuilder.group({
     serviceName:['',Validators.required]
@@ -152,6 +154,8 @@ export class ListMenuComponent implements OnInit {
       (error) => {
         this.showNoData = true;
         this.isLoading = false;
+        this.statusCode  = error.status;
+        this.statusText  = error.statusText;
       },
     );
   }
