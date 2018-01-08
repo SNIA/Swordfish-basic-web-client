@@ -29,7 +29,7 @@ Run the below commands in terminal/console window.
    `npm start` will launch the application on browser's  http protocol and localhost as IPaddress  on port 3000 <br />
   
 # Default Credentials to access the Web Client:
-  Username: snia@gmail.com<br />
+  Username: swordfish@snia.org<br />
   Password: snia@123
   
 # Supported Browsers

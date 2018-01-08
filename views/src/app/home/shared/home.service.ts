@@ -98,4 +98,9 @@ export class HomeService {
         }))
           .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }
+    deleteSession() {
+      return this.http.delete('/deleteSession?Ip='+this.DEVICE_URL + '/redfish/v1/SessionService/Sessions/1').catch((error:any) =>
+      Observable.throw(error.json().error || 'Server error')
+      );
+    }
 }

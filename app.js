@@ -55,7 +55,6 @@
             method: 'GET'
         }, function (err, res, body) {
 		     if(err) {
-		         console.log(err);
                   if(err.code == 'ECONNREFUSED') {
                      return response.status(502).send({ error: err.code + ': Connection refused' })
                  }
@@ -83,11 +82,10 @@
             },
         }, function (err, res) {
             if(err) {
-                return err;
+                return response(404).send({error:'not found'});
             }
             return response.send(res);
         });
-
     });
 	app.post('/updateCollection', function(req, response) {
         var urlString = req.query.Ip;
@@ -146,10 +144,25 @@
                 'Content-Type':'application/json'
             }
         }, function (err, res) {
+            if(err) {
+                return response.status(405).send({error:'Deletion Failed'});
+            }
+            return response.send(res);
+
+        });
+    });
+    app.delete('/deleteSession',function(req,response) {
+        var urlString = req.query.Ip;
+        request({
+            uri: urlString,
+            method: 'DELETE',
+            headers:{
+                'Content-Type':'application/json'
+            }
+        }, function (err, res) {
             return response.send(res);
         });
     });
-
 	app.listen(3300, function(){
 	  console.log('Listening on port 3000, Live  http://localhost:3000');
 	});

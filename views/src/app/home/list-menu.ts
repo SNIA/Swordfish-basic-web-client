@@ -67,10 +67,8 @@ export class ListMenuComponent implements OnInit {
     serviceName:['',Validators.required]
   });
 
-
   constructor( public homeService: HomeService,public formBuilder: FormBuilder,public _routeParamsPipe:routeParamsPipe) {
   }
-
 
   ngOnInit() {
     this.getsysOverview(this.value);
@@ -80,7 +78,9 @@ export class ListMenuComponent implements OnInit {
   /*ToDo: request to Post that add's a collection */
   onAddServices() {
     this.homeService.addNewService(this.value+"/"+this.addService.value['serviceName'],this.keyProperties).subscribe((res: Response) =>{
-     this.sysDetails.push({'@odata.id':this.value+"/"+this.addService.value['serviceName']});
+       this.sysDetails.push({'@odata.id':this.value+"/"+this.addService.value['serviceName']});
+    },(error) => {
+        alert("Error :" + error);
     });
   }
 
@@ -359,7 +359,13 @@ export class ListMenuComponent implements OnInit {
      event.stopPropagation();
      this.homeService.deleteSwordfishService(data,this.value).subscribe(res => {
        this.getsysOverview(this.value);
-     });
+     },(error) => {
+        alert("Deleting a service Failed");
+       }
+     );
+  }
+  public removeService() {
+
   }
 }
 

@@ -23,7 +23,10 @@
  THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import {Component, ViewChild, ViewContainerRef, ComponentFactoryResolver, ElementRef} from '@angular/core';
+import {
+  Component, ViewChild, ViewContainerRef, ComponentFactoryResolver, ElementRef,
+  HostListener
+} from '@angular/core';
 import {Router} from '@angular/router';
 import {HomeService} from './shared/home.service';
 import {ListMenuComponent} from './list-menu';
@@ -189,6 +192,7 @@ export class HomeComponent   {
     logout() {
       localStorage.clear();
       sessionStorage.clear();
+      this.homeService.deleteSession();
       this.router.navigate(['']);
     }
 

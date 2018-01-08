@@ -24,6 +24,7 @@
  */
 import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from "@angular/core";
 import {ModalComponent} from "ng2-bs3-modal/ng2-bs3-modal";
+import {HomeService} from "../home/shared/home.service";
 
 @Component({
   selector:'confirm-modal',
@@ -37,7 +38,7 @@ export class ConfirmModalComponent implements OnInit {
   @Input() serviceToRemove: any;
   @Output() toggleCnfmModel = new EventEmitter();
 
-    constructor() {
+    constructor(private _homeSerivice:HomeService) {
     }
     ngOnInit() {
        this.modal.open();
@@ -52,6 +53,7 @@ export class ConfirmModalComponent implements OnInit {
       sessionStorage.setItem('DeviceInfo',JSON.stringify(servicesDetails));
       this.DeviceInfo.splice(this.DeviceInfo.indexOf(this.serviceToRemove),1);
       this.toggleCnfmModel.emit({'data':this.DeviceInfo,'toDel':false});
+      this._homeSerivice.deleteSession();
       this.modal.close();
      }
 }
