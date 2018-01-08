@@ -121,6 +121,9 @@
                 else if(err.code == 'ECONNREFUSED') {
                     return response.status(502).send({ error: err.code + ': Connection refused' })
                 }
+                else if(err.code == 'ETIMEDOUT ') {
+                    return response.status(502).send({ error: err.code + ': Error Connection Timed Out' })
+                }
                 else{
                     return response.status(502).send({ error: err.code  })
                 }
