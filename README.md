@@ -30,7 +30,9 @@ Run the below commands in terminal/console window.
   
 # Default Credentials to access the Web Client:
   Username: swordfish@snia.org<br />
-  Password: snia@123
+  Password: snia@123<br />
+  
+ The information about the credentials are listed in `views/src/assets/json/login.json` file
   
 # Supported Browsers
 1.	Chrome( Latest version), 
