@@ -131,6 +131,9 @@
             if(res.headers['set-cookie'] != null){
                 response.setHeader('Cookie-Headers',res.headers['set-cookie']);
             }
+            if(res.headers['location'] != null) {
+                response.setHeader('location',res.headers['location']);
+            }
             return response.send(res);
         });
 	});
@@ -160,6 +163,10 @@
                 'Content-Type':'application/json'
             }
         }, function (err, res) {
+            if(err) {
+                console.log("error");
+                return response.send(err)
+            }
             return response.send(res);
         });
     });

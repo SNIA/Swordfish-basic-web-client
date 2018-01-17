@@ -36,15 +36,16 @@ export class HomeService {
     public DEVICE_URL: any;
     public token:any;
     public cookieId:any;
+    public locIp:any;
     set
     setIpAddress(url:any) {
       url = url.replace('http://','');
       this.DEVICE_URL = 'http://'+ url;
     }
-    setAuthHeader(token:any,cookieId:any) {
+    setAuthHeader(token:any,cookieId:any,Location:any) {
       this.token = token;
       this.cookieId = cookieId;
-      document.cookie = cookieId;
+      this.locIp = Location;
     }
     getDeviceInfo(type: any): Observable<any> {
       let sysInfo =  this.DEVICE_URL + type ;
@@ -99,7 +100,7 @@ export class HomeService {
           .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }
     deleteSession() {
-      return this.http.delete('/deleteSession?Ip='+this.DEVICE_URL + '/redfish/v1/SessionService/Sessions/1').catch((error:any) =>
+      return this.http.delete('/deleteSession?Ip='+this.locIp).catch((error:any) =>
       Observable.throw(error.json().error || 'Server error')
       );
     }

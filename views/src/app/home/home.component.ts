@@ -36,13 +36,17 @@ import {KeysPipe} from "../pipes/key-value";
 @Component({
   selector: 'home',
   templateUrl: 'home.html',
-  styleUrls: [ 'home.css']
+  styleUrls: [ 'home.css'],
+
 })
 export class HomeComponent   {
 
   @ViewChild('dynamicCom', { read: ViewContainerRef}) viewData: ViewContainerRef;
   @ViewChild('dynamicCom') vd:ElementRef;
-
+  @HostListener('window:beforeunload', ['$event'])
+  beforeunloadHandler(event) {
+    this.clearSessions();
+  }
   public dataToDisplay: any = [];
   public DeviceInfo: any= [];
   public resourcesMenu: any;
@@ -84,6 +88,11 @@ export class HomeComponent   {
     else {
       this.DeviceInfo = [];
     }
+  }
+  public clearSessions() {
+    sessionStorage.clear();
+    this.homeService.deleteSession().subscribe(res => {
+    });
   }
   IPInfo(data: any) {
     if(data.IPAddress) {
@@ -190,9 +199,11 @@ export class HomeComponent   {
     this.breadCrumKey = new routeParamsPipe().transform(value);
   }
     logout() {
-      localStorage.clear();
-      sessionStorage.clear();
-      this.homeService.deleteSession();
+       localStorage.removeItem('user-token');
+       sessionStorage.clear();
+      this.homeService.deleteSession().subscribe(res => {
+
+      });
       this.router.navigate(['']);
     }
 
