@@ -22,12 +22,13 @@
  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
  THE POSSIBILITY OF SUCH DAMAGE.
  */
-import {Component, Output, EventEmitter, OnInit} from '@angular/core';
+import {Component, Output, EventEmitter, OnInit, ViewChild} from '@angular/core';
 import {KeysPipe} from '../pipes/key-value';
 import {HomeService} from './shared/home.service';
 import {Response} from '@angular/http';
 import {FormBuilder, Validators} from "@angular/forms";
 import {routeParamsPipe} from "../pipes/routeParams";
+
 
 @Component({
   selector:'list-menu',
@@ -77,9 +78,14 @@ export class ListMenuComponent implements OnInit {
 
   /*ToDo: request to Post that add's a collection */
   onAddServices() {
+    this.isLoading = true;
     this.homeService.addNewService(this.value+"/"+this.addService.value['serviceName'],this.keyProperties).subscribe((res: Response) =>{
        this.sysDetails.push({'@odata.id':this.value+"/"+this.addService.value['serviceName']});
+       this.isLoading = false;
+      this.addService.reset();
     },(error) => {
+      this.isLoading = false;
+      this.addService.reset();
         alert("Error :" + error);
     });
   }
@@ -356,16 +362,17 @@ export class ListMenuComponent implements OnInit {
     this.CollectionName = this._routeParamsPipe.transform(this.value);
   }
   public removeCollService(event:any,data:any) {
+    this.isLoading = true;
      event.stopPropagation();
      this.homeService.deleteSwordfishService(data,this.value).subscribe(res => {
        this.getsysOverview(this.value);
+       alert("Deleted Sucessfully");
+       this.isLoading = false;
      },(error) => {
         alert("Deleting a service Failed");
+       this.isLoading = false;
        }
      );
-  }
-  public removeService() {
-
   }
 }
 

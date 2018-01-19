@@ -128,7 +128,7 @@
       <div class="form-group" style="padding: 10px 0px">
         <div class="col-sm-offset-5 col-sm-7">
           <button type="submit" class="btn  signin" (click)="onAddServices();addServices=false " >Add</button>
-          <button type="submit" class="btn  signin" (click)="addServices = false"> Cancel</button>
+          <button type="reset" class="btn  signin" (click)="addServices = false;addService.reset();"> Cancel</button>
         </div>
       </div>
     </div>
@@ -137,3 +137,4 @@
 <div>
   <spinner-component [spinnerShow]="isLoading"></spinner-component>
 </div>
+

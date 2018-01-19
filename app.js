@@ -164,7 +164,6 @@
             }
         }, function (err, res) {
             if(err) {
-                console.log("error");
                 return response.send(err)
             }
             return response.send(res);
