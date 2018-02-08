@@ -57,6 +57,9 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('user-token', this.user_tokenId)
           this.router.navigate(['/home']);
         }
+        else {
+          alert("Invalid Credentials");
+        }
       });
     }
 }

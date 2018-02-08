@@ -1,11 +1,11 @@
 {
   "userDetails":[
     {
-      "firstName":"peopletech",
-      "lastName":"hyd",
-      "email":"snia@gmail.com",
+      "firstName":"swordfish",
+      "lastName":"snia",
+      "email":"swordfish@snia.org",
       "password":"snia@123",
-      "companyName":"PTG-HYD",
+      "companyName":"Swordfish",
       "phoneNumber":"9966332255",
       "token":"token-admin"
     }

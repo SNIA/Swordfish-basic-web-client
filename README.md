@@ -15,22 +15,37 @@ Run the following commands in terminal/console window.<br />
   •	  `npm install -g @angular/cli@latest`
   
 # Web Client Installation
-Run the below commands in terminal/console window.
+
+Run the below commands in terminal/console window , if yopu are running the application for the first time.
   1. `cd views && npm install` <br />
      `cd views` changes the current working directory(project) path to views folder where angular application resides, `npm install`  will install all modules listed as dependencies in  `package.json` in to the local `node_modules` folder.  which are required to run the angular application. <br />
+	 
+  2.`ng build` <br />
+     The `ng build` command is intended for building the app and deploying the build artifacts . The build artifacts will be stored in the dist/ directory
      
-  2. `cd.. && npm install` <br />
+  3. `cd.. && npm install` <br />
      `cd..` reverts the path from views folder to project folder. `npm install`  install all modules listed as dependencies in project's `package.json` in to the local `node_modules` folder required to run the node application.
-     
-  3. `npm start` <br />
+	  
+  4. `npm start` <br />
      This runs an arbitrary command specified in the package.json's  "start" property of its "scripts" object.Npm scripts let you group together and run logically related commands and establishes a development server to execute the  code , launches the application on browser. <br />
      
   4. Open `http://localhost:3000/` in your browser to access the Web Client. <br />
    `npm start` will launch the application on browser's  http protocol and localhost as IPaddress  on port 3000 <br />
+   
+** Note: build to angular application is required  upon any pull request or if, any changes are detected .Follow the below steps to build and run the application <br />
+  1. `cd views && ng build` <br />
+  2. `cd .. && npm start` <br />
+  
+  Or <br /> 
+  Directly run The application using `npm start`.
+
+
   
 # Default Credentials to access the Web Client:
-  Username: snia@gmail.com<br />
-  Password: snia@123
+  Username: swordfish@snia.org<br />
+  Password: snia@123<br />
+  
+ The information about the credentials are listed in `views/src/assets/json/login.json` file
   
 # Supported Browsers
 1.	Chrome( Latest version), 

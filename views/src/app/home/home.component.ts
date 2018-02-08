@@ -23,7 +23,10 @@
  THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import {Component, ViewChild, ViewContainerRef, ComponentFactoryResolver, ElementRef} from '@angular/core';
+import {
+  Component, ViewChild, ViewContainerRef, ComponentFactoryResolver, ElementRef,
+  HostListener
+} from '@angular/core';
 import {Router} from '@angular/router';
 import {HomeService} from './shared/home.service';
 import {ListMenuComponent} from './list-menu';
@@ -33,13 +36,17 @@ import {KeysPipe} from "../pipes/key-value";
 @Component({
   selector: 'home',
   templateUrl: 'home.html',
-  styleUrls: [ 'home.css']
+  styleUrls: [ 'home.css'],
+
 })
 export class HomeComponent   {
 
   @ViewChild('dynamicCom', { read: ViewContainerRef}) viewData: ViewContainerRef;
   @ViewChild('dynamicCom') vd:ElementRef;
-
+  @HostListener('window:beforeunload', ['$event'])
+  beforeunloadHandler(event) {
+    this.clearSessions();
+  }
   public dataToDisplay: any = [];
   public DeviceInfo: any= [];
   public resourcesMenu: any;
@@ -82,10 +89,15 @@ export class HomeComponent   {
       this.DeviceInfo = [];
     }
   }
+  public clearSessions() {
+    sessionStorage.clear();
+    this.homeService.deleteSession().subscribe(res => {
+    });
+  }
   IPInfo(data: any) {
     if(data.IPAddress) {
      this.DeviceInfo.push(data);
-     localStorage.setItem("DeviceInfo",JSON.stringify(this.DeviceInfo));
+     sessionStorage.setItem("DeviceInfo",JSON.stringify(this.DeviceInfo));
     }
     this.addDevice = false;
   }
@@ -123,7 +135,7 @@ export class HomeComponent   {
       },
         (error) => {
           this.isLoading = false;
-          this.showError = "Something Went Wrong";
+          this.showError = "Your Connection was " + error.statusText;
         },
       );
       this.breadCrums = [];
@@ -187,8 +199,11 @@ export class HomeComponent   {
     this.breadCrumKey = new routeParamsPipe().transform(value);
   }
     logout() {
-      localStorage.clear();
-      sessionStorage.clear();
+       localStorage.removeItem('user-token');
+       sessionStorage.clear();
+      this.homeService.deleteSession().subscribe(res => {
+
+      });
       this.router.navigate(['']);
     }
 
