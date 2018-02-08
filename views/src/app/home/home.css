@@ -1,4 +1,3 @@
-
 .header {
   display: block;
   background: #532380;
@@ -153,9 +152,6 @@ h5 {
   padding-bottom: 10px;
 }
 .hasSubMenu  {
-  /*color: cadetblue;
-  font-weight: bold;
-  font-size: 15px;*/
   margin-left:5%;
   font-size:14px;
   font-weight: 200;
@@ -169,7 +165,6 @@ ul {
   padding: 5px 10px;
 }
 .main-menu ul li{
- /* color: #3A3C3D*/;
   font-family: Segoe UI Regular;
   font-size: 14px;
   cursor: pointer;
@@ -226,7 +221,6 @@ ul {
 .device-info p {
   margin-left: 30px;
 }
-
 .top-bar {
   height: 40px;
   position: fixed;
@@ -236,9 +230,7 @@ ul {
   font-size: 13px;
   background: #FFFFFF;
   color: black;
-
 }
-
 .app-title {
   width: auto;
   height: 40px;
@@ -273,8 +265,6 @@ ul {
   top: 0px;
 }
 .active {
-  /*background:#c0effc;*/
-/*  background: #d3e255;*/
   opacity: 0.8;
   background: #898989;
   color:white !important;
@@ -282,7 +272,6 @@ ul {
 .color-black {
   color:black;
 }
-
 .emulator-overview {
   height:auto;
 }
@@ -294,7 +283,6 @@ ul {
   border:0 !important;
 }
 .rds-container {
-
   height: calc(100% - 40px);
   position: relative;
   min-height: 0;
@@ -324,7 +312,6 @@ label {
   width:100%;
 }
 ul:hover {
- /* background: #f0f5c4;*/
   background:  #e2e2e2;
   color:black;
 }
@@ -373,17 +360,10 @@ spinner {
   border: 0 !important;
   color: white;
 }
-/*.main-menu::-webkit-scrollbar-track {
-  border: 1px solid transparent;
-  background-color: #f5f5f5;
-  background-clip:content-box;
-}*/
-
 .main-menu::-webkit-scrollbar {
   width: 7px;
   height: 2px;
 }
-
 .main-menu::-webkit-scrollbar-thumb {
   background: #CCCCCC;
   border: 0px none #ffffff;
@@ -391,4 +371,12 @@ spinner {
 }
 .main-menu::-webkit-scrollbar-corner {
   background: transparent;
+}
+.error-message {
+  padding: 10px;
+  font-weight: 600;
+  font-size:14px;
+}
+.error-message span {
+  font-weight: 500 !important;
 }

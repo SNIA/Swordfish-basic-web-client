@@ -6,18 +6,18 @@
     <button  class="btn btn-default add-button" (click)="addServices=true" *ngIf="CollectionName === 'FileSystems' || CollectionName === 'Volumes' || CollectionName === 'StorageServices'">
       <span class="glyphicon glyphicon-plus-sign"></span> Add
     </button>
-    <button type="button" class="btn btn-default"  *ngIf="!showRemove && sysDetails.length > 0" (click)="showRemove = !showRemove;">
+    <button type="button" class="btn btn-default"  *ngIf="!showRemove && sysDetails.length > 0 && (CollectionName === 'FileSystems' || CollectionName === 'Volumes' || CollectionName === 'StorageServices')" (click)="showRemove = !showRemove">
       <span class="glyphicon glyphicon-minus-sign"></span> Remove
     </button>
     <button type="button" class="btn btn-default" *ngIf="showRemove" (click)="showRemove = !showRemove">
       <span class="glyphicon glyphicon-remove-sign"></span> Cancel
     </button>
   </div>
-  <div class="main-menu">
+  <div class="main-menu" *ngIf="!showNoData">
     <ul *ngFor="let subdata of sysDetails let ind=index" [ngClass]="{'active':  show  === ind} ">
 
       <li  (click)="createNew(subdata['@odata.id'],ind)">
-        <span  *ngIf="showRemove" class="glyphicon glyphicon-minus-sign" style="color:red"  (click)="removeCollService($event,subdata)"></span>
+        <span  class="glyphicon glyphicon-minus-sign" style="color:red"  (click)="removeCollService($event,subdata)" *ngIf="showRemove"></span>
         {{subdata['@odata.id'] | routeParams}}
         <i class="pull-right float-xs-right glyphicon"
            [ngClass]="{'glyphicon-chevron-up ac-heading': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
@@ -44,11 +44,11 @@
                 <td *ngIf="!canEdit"><span style="font-size:14px"> {{data.value}}</span></td>
                 <td  *ngIf="canEdit && !data.isParent "><span><input type="text" [(ngModel)]="data.value" (ngModelChange)="sendData(data.key,data.value,data.parentKey,data.index,sampleData)"></span></td>
               </tr>
-              <tr *ngIf="showNoData">
+             <!-- <tr *ngIf="showNoData">
                 <td>
                   No data found
                 </td>
-              </tr>
+              </tr>-->
           </table>
         </accordion-group>
         <accordion-group  #group2 style="margin: 25px 30px;">
@@ -63,11 +63,11 @@
               <td class="device-keys" [ngClass]="{'hasSubMenu':i}"> {{data.key}}</td>
               <td><span style="font-size:14px">{{data.value}}</span></td>
             </tr>
-            <tr *ngIf="showNoData">
+            <!--<tr *ngIf="showNoData">
               <td>
-                No data found
+               No data found
               </td>
-            </tr>
+            </tr>-->
           </table>
         </accordion-group>
         <accordion-group  #group3 style="margin: 25px 30px;" >
@@ -82,15 +82,20 @@
               <td class="device-keys"  [ngClass]="{'hasSubMenu':i}"> {{data.key}}</td>
               <td><span style="font-size:14px" *ngIf="data.link">{{data.link['@odata.id']}} </span></td>
             </tr>
-            <tr *ngIf="showNoData">
+           <!-- <tr *ngIf="showNoData">
               <td>
                 No data found
               </td>
-            </tr>
+            </tr>-->
           </table>
         </accordion-group>
       </accordion>
     </div>
+  </div>
+  <div class="main-menu" *ngIf="showNoData">
+    <div class="error-message">Your Connection was interpreted with following </div>
+    <div class="error-message"> Status Code : <span> {{ statusCode}} </span></div>
+    <div class="error-message"> Error : <span> {{statusText}} </span> </div>
   </div>
 </div>
 
@@ -123,7 +128,7 @@
       <div class="form-group" style="padding: 10px 0px">
         <div class="col-sm-offset-5 col-sm-7">
           <button type="submit" class="btn  signin" (click)="onAddServices();addServices=false " >Add</button>
-          <button type="submit" class="btn  signin" (click)="addServices = false"> Cancel</button>
+          <button type="reset" class="btn  signin" (click)="addServices = false;addService.reset();"> Cancel</button>
         </div>
       </div>
     </div>
@@ -132,3 +137,4 @@
 <div>
   <spinner-component [spinnerShow]="isLoading"></spinner-component>
 </div>
+

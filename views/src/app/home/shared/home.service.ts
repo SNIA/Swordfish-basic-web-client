@@ -36,21 +36,22 @@ export class HomeService {
     public DEVICE_URL: any;
     public token:any;
     public cookieId:any;
+    public locIp:any;
     set
     setIpAddress(url:any) {
       url = url.replace('http://','');
       this.DEVICE_URL = 'http://'+ url;
     }
-    setAuthHeader(token:any,cookieId:any) {
+    setAuthHeader(token:any,cookieId:any,Location:any) {
       this.token = token;
       this.cookieId = cookieId;
-      document.cookie = cookieId;
+      this.locIp = Location;
     }
     getDeviceInfo(type: any): Observable<any> {
       let sysInfo =  this.DEVICE_URL + type ;
       let headers = new Headers();
       headers.append('X-Auth-Token',this.token);
-      headers.append('Cookie-Headers',this.cookieId);
+      headers.append('Cookie-Headers',sessionStorage.getItem(this.DEVICE_URL.replace('http://','')));
       return this.http.get( '/getCollectionData?Ip='+sysInfo,{headers:headers}).map((res: Response) => {
         if ( res.status < 200 || res.status >= 300) {
           throw new Error('This request has failed ' + res.status);
@@ -61,7 +62,7 @@ export class HomeService {
       });
     }
     getIPAddress() {
-      return  localStorage.getItem('DeviceInfo');
+      return  sessionStorage.getItem('DeviceInfo');
     }
     getAuthToken(data:any) {
       let postUrl = this.DEVICE_URL + "/redfish/v1/SessionService/Sessions";
@@ -97,5 +98,10 @@ export class HomeService {
           body: data
         }))
           .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+    }
+    deleteSession() {
+      return this.http.delete('/deleteSession?Ip='+this.locIp).catch((error:any) =>
+      Observable.throw(error.json().error || 'Server error')
+      );
     }
 }
