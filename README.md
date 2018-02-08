@@ -19,12 +19,12 @@ Run the following commands in terminal/console window.<br />
 Run the below commands in terminal/console window , if yopu are running the application for the first time.
   1. `cd views && npm install` <br />
      `cd views` changes the current working directory(project) path to views folder where angular application resides, `npm install`  will install all modules listed as dependencies in  `package.json` in to the local `node_modules` folder.  which are required to run the angular application. <br />
-	 
+     
   2.`ng build` <br />
      The `ng build` command is intended for building the app and deploying the build artifacts . The build artifacts will be stored in the dist/ directory
      
-  3. `cd.. && npm install` <br />
-     `cd..` reverts the path from views folder to project folder. `npm install`  install all modules listed as dependencies in project's `package.json` in to the local `node_modules` folder required to run the node application.
+  3. `cd .. && npm install` <br />
+     `cd ..` reverts the path from views folder to project folder. `npm install`  install all modules listed as dependencies in project's `package.json` in to the local `node_modules` folder required to run the node application.
 	  
   4. `npm start` <br />
      This runs an arbitrary command specified in the package.json's  "start" property of its "scripts" object.Npm scripts let you group together and run logically related commands and establishes a development server to execute the  code , launches the application on browser. <br />
