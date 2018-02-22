@@ -100,7 +100,8 @@ export class HomeService {
           .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }
     deleteSession() {
-      return this.http.delete('/deleteSession?Ip='+this.locIp).catch((error:any) =>
+      var locationHeader = sessionStorage.getItem(this.DEVICE_URL.replace('http://','')+'Location');
+      return this.http.delete('/deleteSession?Ip='+locationHeader).catch((error:any) =>
       Observable.throw(error.json().error || 'Server error')
       );
     }

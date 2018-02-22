@@ -59,8 +59,9 @@ export class AddEmulatorComponent implements OnInit{
         };
         this.homeService.setIpAddress( this.addForm.value['sysName']);
         this.homeService.getAuthToken(credentials).subscribe(res => {
-            this.homeService.setAuthHeader(res.headers.get('X-Auth-Token'),res.headers.get('Cookie-Headers'),res.headers.get('location'));
+            this.homeService.setAuthHeader(res.headers.get('X-Auth-Token'),res.headers.get('Cookie-Headers'),res.headers.get('Location'));
             sessionStorage.setItem(this.addForm.value['sysName'],res.headers.get('Cookie-Headers'));
+            sessionStorage.setItem(this.addForm.value['sysName']+'Location',res.headers.get('Location'));
             this.IPInfo.emit({'IPAddress': this.addForm.value['sysName'],'DomainName':this.addForm.value['domainName']});
         },
           (error) => {
