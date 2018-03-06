@@ -90,8 +90,9 @@ export class HomeComponent   {
     }
   }
   public clearSessions() {
-    sessionStorage.clear();
-    this.homeService.deleteSession().subscribe(res => {
+   
+    this.homeService.deleteSession().subscribe(res => { 
+		sessionStorage.clear();
     });
   }
   IPInfo(data: any) {
@@ -199,12 +200,12 @@ export class HomeComponent   {
     this.breadCrumKey = new routeParamsPipe().transform(value);
   }
     logout() {
-       localStorage.removeItem('user-token');
-       sessionStorage.clear();
       this.homeService.deleteSession().subscribe(res => {
-
+        localStorage.removeItem('user-token');
+        sessionStorage.clear();
+        this.router.navigate(['']);
       });
-      this.router.navigate(['']);
+
     }
 
     onAddDevice() {
