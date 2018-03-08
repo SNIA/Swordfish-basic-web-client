@@ -90,8 +90,7 @@ export class HomeComponent   {
     }
   }
   public clearSessions() {
-   
-    this.homeService.deleteSession().subscribe(res => { 
+    this.homeService.deleteSession('').subscribe(res => {
 		sessionStorage.clear();
     });
   }
@@ -200,7 +199,7 @@ export class HomeComponent   {
     this.breadCrumKey = new routeParamsPipe().transform(value);
   }
     logout() {
-      this.homeService.deleteSession().subscribe(res => {
+      this.homeService.deleteSession('').subscribe(res => {
         localStorage.removeItem('user-token');
         sessionStorage.clear();
         this.router.navigate(['']);
