@@ -156,6 +156,7 @@
     });
     app.delete('/deleteSession',function(req,response) {
         var urlString = req.query.Ip;
+	console.log(urlString);
         request({
             uri: urlString,
             method: 'DELETE',
@@ -165,6 +166,8 @@
         }, function (err, res) {
             if(err) {
                 return response.send(err)
+		console.log("error");
+		console.log(err);
             }
             return response.send(res);
         });
