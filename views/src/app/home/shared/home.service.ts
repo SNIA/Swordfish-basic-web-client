@@ -103,18 +103,17 @@ export class HomeService {
     deleteSession(url:any) {
       var locationHeader;
       var sessionHeader;
+      let headers = new Headers();
+      headers.append('X-Auth-Token',this.token);
+      headers.append('Cookie-Headers',sessionStorage.getItem(this.DEVICE_URL.replace('http://','')));
       if(url) {
          locationHeader = this.DEVICE_URL +  url;
-         console.log("deleting particluar session");
-        console.log(locationHeader);
       }
       else{
          sessionHeader = sessionStorage.getItem(this.DEVICE_URL.replace('http://','')+'Location');
          locationHeader = this.DEVICE_URL + sessionHeader;
-        console.log("deleting  newly added session");
-         console.log(locationHeader);
       }
-      return this.http.delete('/deleteSession?Ip='+locationHeader).catch((error:any) =>
+      return this.http.delete('/deleteSession?Ip='+locationHeader,{headers:headers}).catch((error:any) =>
       Observable.throw(error.json().error || 'Server error')
       );
     }

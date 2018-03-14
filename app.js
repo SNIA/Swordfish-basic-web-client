@@ -156,11 +156,14 @@
     });
     app.delete('/deleteSession',function(req,response) {
         var urlString = req.query.Ip;
+        console.log(req.get('Cookie-Headers'));
         request({
             uri: urlString,
             method: 'DELETE',
             headers:{
-                'Content-Type':'application/json'
+                'Content-Type':'application/json',
+                'X-Auth-Token':req.get('X-Auth-Token'),
+                'Cookie':req.get('Cookie-Headers')
             }
         }, function (err, res) {
             if(err) {
