@@ -156,7 +156,11 @@
     });
     app.delete('/deleteSession',function(req,response) {
         var urlString = req.query.Ip;
+<<<<<<< HEAD
         console.log(req.get('Cookie-Headers'));
+=======
+	console.log(urlString);
+>>>>>>> d0e354349f9ab893a41b6658edefc3e1a47fc943
         request({
             uri: urlString,
             method: 'DELETE',
@@ -168,6 +172,8 @@
         }, function (err, res) {
             if(err) {
                 return response.send(err)
+		console.log("error");
+		console.log(err);
             }
             return response.send(res);
         });
