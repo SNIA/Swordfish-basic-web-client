@@ -48,6 +48,9 @@ export class HomeService {
       this.cookieId = cookieId;
       this.locIp = Location;
     }
+    getCurrentSessionName() {
+      return sessionStorage.getItem(this.DEVICE_URL.replace('http://','')+'Location');
+    }
     getDeviceInfo(type: any): Observable<any> {
       let sysInfo =  this.DEVICE_URL + type ;
       let headers = new Headers();

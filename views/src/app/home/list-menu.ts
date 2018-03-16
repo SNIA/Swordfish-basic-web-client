@@ -63,6 +63,7 @@ export class ListMenuComponent implements OnInit {
   public showRemove:any = false;
   public statusCode :any;
   public statusText:any;
+  public currentSessionName:any;
 
    public addService = this.formBuilder.group({
     serviceName:['',Validators.required]
@@ -74,6 +75,7 @@ export class ListMenuComponent implements OnInit {
   ngOnInit() {
     this.getsysOverview(this.value);
     this.CollectionName = this._routeParamsPipe.transform(this.value);
+    this.currentSessionName = this._routeParamsPipe.transform(this.homeService.getCurrentSessionName());
   }
 
   /*ToDo: request to Post that add's a collection */
