@@ -376,7 +376,7 @@ export class ListMenuComponent implements OnInit {
   }
   public removeSession(url:any) {
     this.homeService.deleteSession(url).subscribe(res => {
-      sessionStorage.clear();
+
     });
   }
 }

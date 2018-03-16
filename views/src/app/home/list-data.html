@@ -6,9 +6,13 @@
     <button  class="btn btn-default add-button" (click)="addServices=true" *ngIf="CollectionName === 'FileSystems' || CollectionName === 'Volumes' || CollectionName === 'StorageServices'">
       <span class="glyphicon glyphicon-plus-sign"></span> Add
     </button>
-    <button type="button" class="btn btn-default"  *ngIf="!showRemove && sysDetails.length > 0 && (CollectionName === 'FileSystems' || CollectionName === 'Volumes' || CollectionName === 'StorageServices' || CollectionName  === 'Sessions')" (click)="showRemove = !showRemove">
+    <button type="button" class="btn btn-default"  *ngIf="!showRemove && sysDetails.length > 0 && (CollectionName === 'FileSystems' || CollectionName === 'Volumes' || CollectionName === 'StorageServices')" (click)="showRemove = !showRemove">
       <span class="glyphicon glyphicon-minus-sign"></span> Remove
     </button>
+    <button type="button" class="btn btn-default"  *ngIf="!showRemove && sysDetails.length > 1 && (CollectionName  === 'Sessions')" (click)="showRemove = !showRemove">
+      <span class="glyphicon glyphicon-minus-sign"></span> Remove
+    </button>
+
     <button type="button" class="btn btn-default" *ngIf="showRemove" (click)="showRemove = !showRemove">
       <span class="glyphicon glyphicon-remove-sign"></span> Cancel
     </button>
@@ -18,7 +22,7 @@
 
       <li  (click)="createNew(subdata['@odata.id'],ind)">
         <span  class="glyphicon glyphicon-minus-sign" style="color:red"  (click)="removeCollService($event,subdata)" *ngIf="showRemove && !(CollectionName  === 'Sessions')"></span>
-        <span  class="glyphicon glyphicon-minus-sign" style="color:red"  (click)="removeSession(subdata['@odata.id'])" *ngIf="showRemove && CollectionName  === 'Sessions'"></span>
+        <span  class="glyphicon glyphicon-minus-sign" style="color:red"  (click)="removeSession(subdata['@odata.id'])" *ngIf="showRemove && CollectionName  === 'Sessions' "></span>
         {{subdata['@odata.id'] | routeParams}}
         <i class="pull-right float-xs-right glyphicon"
            [ngClass]="{'glyphicon-chevron-up ac-heading': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
