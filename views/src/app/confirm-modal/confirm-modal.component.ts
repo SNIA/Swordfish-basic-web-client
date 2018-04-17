@@ -48,7 +48,7 @@ export class ConfirmModalComponent implements OnInit {
       this.modal.close();
     }
     deleteService() {
-      this._homeSerivice.deleteSession().subscribe(res => {
+      this._homeSerivice.deleteSession('').subscribe(res => {
         let servicesDetails = JSON.parse(sessionStorage.getItem('DeviceInfo'));
         servicesDetails.splice(this.DeviceInfo.indexOf(this.serviceToRemove),1);
         sessionStorage.setItem('DeviceInfo',JSON.stringify(servicesDetails));

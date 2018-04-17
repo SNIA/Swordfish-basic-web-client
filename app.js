@@ -81,8 +81,8 @@
                 'Cookie':req.get('Cookie-Headers')
             },
         }, function (err, res) {
-            if(err) {
-                return response(404).send({error:'not found'});
+            if(err || res.statusCode !== 200) {
+                return response.status(404).send({error:'Adding a new collection/service failed at this moment'});
             }
             return response.send(res);
         });
@@ -98,6 +98,9 @@
 			method: 'PUT',
 			json:req.body
 		}, function (err, res) {
+            if(err || res.statusCode !== 200) {
+                return response.status(404).send({error:'Updating a collection/service failed,please try again.'});
+            }
 			return response.send(res);
 		});
 	});
@@ -147,7 +150,7 @@
                 'Content-Type':'application/json'
             }
         }, function (err, res) {
-            if(err) {
+            if(err || res.statusCode !== 200) {
                 return response.status(405).send({error:'Deletion Failed'});
             }
             return response.send(res);
@@ -156,15 +159,19 @@
     });
     app.delete('/deleteSession',function(req,response) {
         var urlString = req.query.Ip;
+        console.log(req.get('Cookie-Headers'));
         request({
             uri: urlString,
             method: 'DELETE',
             headers:{
-                'Content-Type':'application/json'
+                'Content-Type':'application/json',
+                'X-Auth-Token':req.get('X-Auth-Token'),
+                'Cookie':req.get('Cookie-Headers')
             }
         }, function (err, res) {
-            if(err) {
+            if(err || res.statusCode !== 200) {
                 return response.send(err)
+		         console.log(err);
             }
             return response.send(res);
         });

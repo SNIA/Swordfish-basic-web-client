@@ -28,6 +28,7 @@ import 'rxjs/add/operator/map';
 import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {Observable} from "rxjs";
 
+
 @Injectable()
 export class HomeService {
     constructor(private http: Http) {
@@ -46,6 +47,9 @@ export class HomeService {
       this.token = token;
       this.cookieId = cookieId;
       this.locIp = Location;
+    }
+    getCurrentSessionName() {
+      return sessionStorage.getItem(this.DEVICE_URL.replace('http://','')+'Location');
     }
     getDeviceInfo(type: any): Observable<any> {
       let sysInfo =  this.DEVICE_URL + type ;
@@ -99,8 +103,20 @@ export class HomeService {
         }))
           .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }
-    deleteSession() {
-      return this.http.delete('/deleteSession?Ip='+this.locIp).catch((error:any) =>
+    deleteSession(url:any) {
+      var locationHeader;
+      var sessionHeader;
+      let headers = new Headers();
+      headers.append('X-Auth-Token',this.token);
+      headers.append('Cookie-Headers',sessionStorage.getItem(this.DEVICE_URL.replace('http://','')));
+      if(url) {
+         locationHeader = this.DEVICE_URL +  url;
+      }
+      else{
+         sessionHeader = sessionStorage.getItem(this.DEVICE_URL.replace('http://','')+'Location');
+         locationHeader = this.DEVICE_URL + sessionHeader;
+      }
+      return this.http.delete('/deleteSession?Ip='+locationHeader,{headers:headers}).catch((error:any) =>
       Observable.throw(error.json().error || 'Server error')
       );
     }
