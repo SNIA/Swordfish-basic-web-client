@@ -141,11 +141,10 @@
         });
 	});
 	app.delete('/deleteService',function(req,response) {
-        var urlString = req.query.Ip;
+        var urlString = req.query.Ip + req.body['@odata.id'];
         request({
             uri: urlString,
             method: 'DELETE',
-            json:req.body,
             headers:{
                 'Content-Type':'application/json'
             }
@@ -159,7 +158,6 @@
     });
     app.delete('/deleteSession',function(req,response) {
         var urlString = req.query.Ip;
-        console.log(req.get('Cookie-Headers'));
         request({
             uri: urlString,
             method: 'DELETE',
