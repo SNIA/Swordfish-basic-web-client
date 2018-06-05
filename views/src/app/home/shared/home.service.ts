@@ -97,7 +97,7 @@ export class HomeService {
       let headers = new Headers();
       headers.append('X-Auth-Token',this.token);
       headers.append('Cookie-Headers',this.cookieId);
-        return this.http.delete('/deleteService?Ip='+this.DEVICE_URL+collectionPath,new RequestOptions({
+        return this.http.delete('/deleteService?Ip='+this.DEVICE_URL,new RequestOptions({
           headers: headers,
           body: data
         }))
