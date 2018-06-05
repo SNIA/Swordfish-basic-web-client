@@ -98,7 +98,7 @@
 			method: 'PUT',
 			json:req.body
 		}, function (err, res) {
-            if(err || res.statusCode !== 200) {
+            if(err || res.statusCode !== 200 || res !== 200) {
                 return response.status(404).send({error:'Updating a collection/service failed,please try again.'});
             }
 			return response.send(res);
@@ -141,16 +141,15 @@
         });
 	});
 	app.delete('/deleteService',function(req,response) {
-        var urlString = req.query.Ip;
+        var urlString = req.query.Ip + req.body['@odata.id'];
         request({
             uri: urlString,
             method: 'DELETE',
-            json:req.body,
             headers:{
                 'Content-Type':'application/json'
             }
         }, function (err, res) {
-            if(err || res.statusCode !== 200) {
+            if(err || res.statusCode !== 200 || res !== 200) {
                 return response.status(405).send({error:'Deletion Failed'});
             }
             return response.send(res);
@@ -159,7 +158,6 @@
     });
     app.delete('/deleteSession',function(req,response) {
         var urlString = req.query.Ip;
-        console.log(req.get('Cookie-Headers'));
         request({
             uri: urlString,
             method: 'DELETE',
@@ -169,9 +167,8 @@
                 'Cookie':req.get('Cookie-Headers')
             }
         }, function (err, res) {
-            if(err || res.statusCode !== 200) {
+            if(err || res.statusCode !== 200 || res !== 200) {
                 return response.send(err)
-		         console.log(err);
             }
             return response.send(res);
         });
