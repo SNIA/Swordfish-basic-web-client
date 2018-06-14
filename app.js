@@ -169,7 +169,7 @@
                 'Cookie':req.get('Cookie-Headers')
             }
         }, function (err, res) {
-            if(err || res.statusCode !== 200) {
+            if(err || res.statusCode !== 200 || res == 500) {
                 return response.send(err)
 		         console.log(err);
             }
