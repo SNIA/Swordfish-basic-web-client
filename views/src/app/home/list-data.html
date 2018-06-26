@@ -36,7 +36,7 @@
                [ngClass]="{'glyphicon glyphicon-triangle-bottom':group1?.isOpen , 'glyphicon glyphicon-triangle-right': !group1?.isOpen}" ></i>
             <span style="padding-left:5px">Properties</span>
             <span  style="margin-right:8px" class="pull-right glyphicon glyphicon-refresh" (click)="refresh($event)"></span>
-            <span  style="margin-right:8px" class="pull-right glyphicon glyphicon-pencil" *ngIf="canUpdate  && !canEdit" (click)="canEdit = !canEdit;onEdit($event);group1.isOpen = true"></span>
+            <span  style="margin-right:8px" class="pull-right glyphicon glyphicon-pencil" *ngIf="!canEdit" (click)="canEdit = !canEdit;onEdit($event);group1.isOpen = true"></span>
             <span style="margin-right:8px" class="pull-right glyphicon glyphicon-plus-sign" *ngIf="canAdd" (click)="onAdd($event);group1.isOpen = true;onAddProperty=true"></span>
             <span  style="margin-right:8px" class="pull-right glyphicon glyphicon-remove" *ngIf="canEdit" (click)="canEdit = !canEdit;onCancelChanges($event);group1.isOpen = true"></span>
             <span style="margin-right:8px" class="pull-right glyphicon glyphicon-save-file" *ngIf="canEdit" (click)="canEdit = !canEdit;showSavedData($event);group1.isOpen = true"></span>

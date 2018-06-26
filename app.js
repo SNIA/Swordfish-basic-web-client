@@ -95,7 +95,7 @@
                 'Cookie':req.get('Cookie-Headers')
             },
 			uri: urlString,
-			method: 'PUT',
+			method: 'PATCH',
 			json:req.body
 		}, function (err, res) {
             if(err || res.statusCode !== 200 || res.body == 500) {
