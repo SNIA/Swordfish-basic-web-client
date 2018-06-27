@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2017, The Storage Networking Industry Association.
+ Copyright (c) 2017-2018, The Storage Networking Industry Association.
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are met:
  Redistributions of source code must retain the above copyright notice,
@@ -97,7 +97,7 @@ export class HomeService {
       let headers = new Headers();
       headers.append('X-Auth-Token',this.token);
       headers.append('Cookie-Headers',this.cookieId);
-        return this.http.delete('/deleteService?Ip='+this.DEVICE_URL+collectionPath,new RequestOptions({
+        return this.http.delete('/deleteService?Ip='+this.DEVICE_URL,new RequestOptions({
           headers: headers,
           body: data
         }))
