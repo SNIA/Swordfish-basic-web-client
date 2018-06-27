@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2017, The Storage Networking Industry Association.
+ Copyright (c) 2017-2018, The Storage Networking Industry Association.
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are met:
  Redistributions of source code must retain the above copyright notice,
@@ -141,11 +141,10 @@
         });
 	});
 	app.delete('/deleteService',function(req,response) {
-        var urlString = req.query.Ip;
+        var urlString = req.query.Ip + req.body['@odata.id'];
         request({
             uri: urlString,
             method: 'DELETE',
-            json:req.body,
             headers:{
                 'Content-Type':'application/json'
             }
@@ -159,7 +158,6 @@
     });
     app.delete('/deleteSession',function(req,response) {
         var urlString = req.query.Ip;
-        console.log(req.get('Cookie-Headers'));
         request({
             uri: urlString,
             method: 'DELETE',
@@ -169,7 +167,8 @@
                 'Cookie':req.get('Cookie-Headers')
             }
         }, function (err, res) {
-            if(err || res.statusCode !== 200 || res == 500) {
+
+            if(err || res.statusCode !== 200 || res !== 200) {
                 return response.send(err)
 		         console.log(err);
             }
