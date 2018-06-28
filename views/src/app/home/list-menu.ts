@@ -304,7 +304,7 @@ export class ListMenuComponent implements OnInit {
       if( Array.isArray(value)) {
         value.map(item => {
           i=i+1;
-          if(typeof item === 'object') {
+          if(item && typeof item === 'object') {
             Object.keys(item).forEach((keydata) => {
               this.getData(keydata, item[keydata], key,i);
             });

@@ -32,6 +32,7 @@ import {HomeService} from './shared/home.service';
 import {ListMenuComponent} from './list-menu';
 import {routeParamsPipe} from '../pipes/routeParams';
 import {KeysPipe} from "../pipes/key-value";
+declare var $: any;
 
 @Component({
   selector: 'home',
@@ -185,7 +186,7 @@ export class HomeComponent   {
       }
       this.close(item.index);
     });
-    document.body.scrollLeft = 100000;
+    window.scrollTo(10000000,0);
   }
   close(index: any) {
     for (let i = index; i <= this.highestLevel + 1; i++) {
