@@ -239,7 +239,6 @@ export class ListMenuComponent implements OnInit {
             else {
               jsonToUpdate[item][index-1] = +value;
             }
-
           }
           else {
             this.setDataType(jsonToUpdate,item,value,jsonToUpdate[item]);
@@ -258,7 +257,6 @@ export class ListMenuComponent implements OnInit {
         else {
          this.checkValueToUpdate(item.value,key,value);
         }
-
       }
       else {
         if(Array.isArray(item.value)) {
@@ -283,7 +281,6 @@ export class ListMenuComponent implements OnInit {
                  });
                }
              });
-
            }
           });
         }
@@ -307,7 +304,7 @@ export class ListMenuComponent implements OnInit {
       if( Array.isArray(value)) {
         value.map(item => {
           i=i+1;
-          if(typeof item === 'object') {
+          if(item && typeof item === 'object') {
             Object.keys(item).forEach((keydata) => {
               this.getData(keydata, item[keydata], key,i);
             });
