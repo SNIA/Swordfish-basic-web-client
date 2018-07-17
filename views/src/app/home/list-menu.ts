@@ -116,7 +116,6 @@ export class ListMenuComponent implements OnInit {
       this.dummyData = data;
       this.sampleData = data;
       this.getSubMenuItems(data, this.sysDetails);
-
       this.sysDetails = this.sysDetails.filter(item => {
           var rg = new RegExp(value+'/','i');
               return rg.test(item['@odata.id']);
@@ -208,7 +207,11 @@ export class ListMenuComponent implements OnInit {
   showSavedData(event: any) {
     event.stopPropagation();
     this.homeService.updateDeviceInfo(this.value, this.sampleData).subscribe((res: Response) =>{
-    });
+    },
+      (error) => {
+            alert(error);
+            this.getsysOverview(this.value);
+  });
   }
 
   setDataType(jsonToUpdate:any,item:any,value:any,valueToCheck:any) {
@@ -239,6 +242,7 @@ export class ListMenuComponent implements OnInit {
             else {
               jsonToUpdate[item][index-1] = +value;
             }
+
           }
           else {
             this.setDataType(jsonToUpdate,item,value,jsonToUpdate[item]);
@@ -257,6 +261,7 @@ export class ListMenuComponent implements OnInit {
         else {
          this.checkValueToUpdate(item.value,key,value);
         }
+
       }
       else {
         if(Array.isArray(item.value)) {
@@ -281,6 +286,7 @@ export class ListMenuComponent implements OnInit {
                  });
                }
              });
+
            }
           });
         }
