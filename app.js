@@ -99,7 +99,7 @@
 			json:req.body
 		}, function (err, res) {
             if(err || res.statusCode !== 200 || res.body == 500) {
-                return response.status(404).send({error:'Updating a collection/service failed at this moment,please try again.'});
+                return response.status(404).send({error:'Updating a collection/service failed.'});
             }
 			return response.send(res);
 		});
