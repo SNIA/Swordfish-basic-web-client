@@ -116,7 +116,6 @@ export class ListMenuComponent implements OnInit {
       this.dummyData = data;
       this.sampleData = data;
       this.getSubMenuItems(data, this.sysDetails);
-
       this.sysDetails = this.sysDetails.filter(item => {
           var rg = new RegExp(value+'/','i');
               return rg.test(item['@odata.id']);
@@ -208,7 +207,11 @@ export class ListMenuComponent implements OnInit {
   showSavedData(event: any) {
     event.stopPropagation();
     this.homeService.updateDeviceInfo(this.value, this.sampleData).subscribe((res: Response) =>{
-    });
+    },
+      (error) => {
+            alert(error);
+            this.getsysOverview(this.value);
+  });
   }
 
   setDataType(jsonToUpdate:any,item:any,value:any,valueToCheck:any) {
@@ -307,7 +310,7 @@ export class ListMenuComponent implements OnInit {
       if( Array.isArray(value)) {
         value.map(item => {
           i=i+1;
-          if(typeof item === 'object') {
+          if(item && typeof item === 'object') {
             Object.keys(item).forEach((keydata) => {
               this.getData(keydata, item[keydata], key,i);
             });

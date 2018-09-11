@@ -81,7 +81,7 @@
                 'Cookie':req.get('Cookie-Headers')
             },
         }, function (err, res) {
-            if(err || res.statusCode !== 200) {
+            if(err || res.statusCode !== 200 || res.body == 500) {
                 return response.status(404).send({error:'Adding a new collection/service failed at this moment'});
             }
             return response.send(res);
@@ -95,11 +95,11 @@
                 'Cookie':req.get('Cookie-Headers')
             },
 			uri: urlString,
-			method: 'PUT',
+			method: 'PATCH',
 			json:req.body
 		}, function (err, res) {
-            if(err || res.statusCode !== 200) {
-                return response.status(404).send({error:'Updating a collection/service failed,please try again.'});
+            if(err || res.statusCode !== 200 || res.body == 500) {
+                return response.status(404).send({error:'Updating a collection/service failed.'});
             }
 			return response.send(res);
 		});
@@ -149,7 +149,8 @@
                 'Content-Type':'application/json'
             }
         }, function (err, res) {
-            if(err || res.statusCode !== 200) {
+
+            if(err || res.statusCode !== 200 || res.body == 500) {
                 return response.status(405).send({error:'Deletion Failed'});
             }
             return response.send(res);
@@ -168,9 +169,9 @@
             }
         }, function (err, res) {
 
-            if(err || res.statusCode !== 200 || res !== 200) {
+            if(err || res.statusCode !== 200 || res.body == 500) {
+
                 return response.send(err)
-		         console.log(err);
             }
             return response.send(res);
         });
