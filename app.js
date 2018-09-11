@@ -168,7 +168,9 @@
                 'Cookie':req.get('Cookie-Headers')
             }
         }, function (err, res) {
+
             if(err || res.statusCode !== 200 || res.body == 500) {
+
                 return response.send(err)
             }
             return response.send(res);
