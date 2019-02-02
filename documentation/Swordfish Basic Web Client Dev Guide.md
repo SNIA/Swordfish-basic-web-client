@@ -1,3 +1,6 @@
+
+<a name="section"></a>
+
 ![https://www.snia.org/sites/default/files/SMI/member-logos/SNIA_SwordfishLogo%20Tag.jpg](media/31f6d669644d7fa491ff3b007c3e5b34.jpg)
 
 **SNIA SwordfishTM Basic Web Client Developer Guide**
@@ -9,6 +12,17 @@ Swordfish hierarchy. The Swordfish Basic Web Client provides basic capabilities
 for managing multiple services simultaneously, modifying configurable properties
 and adding or removing elements from the service through the web UI.
 Installation and user guides are also available.
+
+Contents
+========
+- [Disclaimer](#disclaimer)
+- [Introduction](#introduction)
+- [Technology](#technology)
+  * [2.1 CORS (Cross-origin resource sharing**)**](#21-cors--cross-origin-resource-sharing-----)
+- [Project Structure of Swordfish Basic Web Client](#project-structure-of-swordfish-basic-web-client)
+- [Data Flow](#data-flow)
+- [Components Used for Swordfish Basic Web Client](#components-used-for-swordfish-basic-web-client)
+
 
 Disclaimer
 ==========
@@ -23,6 +37,8 @@ connection with the furnishing, performance, or use.
 Suggestions for revisions should be directed to http://www.snia.org/feedback/.
 
 Copyright © 2016-2019 Storage Networking Industry Association.
+
+[Top](#section)
 
 Introduction
 ============
@@ -57,6 +73,8 @@ services (including emulators), and present in a web UI frame the entire system
 hierarchy. The basic web client also provides basic capabilities to modify
 configurable Properties (as specified in the schema), as well as providing a
 basic interface to add or remove elements from the service through a Web UI.
+
+[Top](#section)
 
  Technology 
 ============
@@ -310,6 +328,8 @@ them using a fan out user interface design approach.
     Please refer to Swordfish Basic Web Client User Guide on how to add/remove
     collections/properties
 
+[Top](#section)
+
 Project Structure of Swordfish Basic Web Client
 ===============================================
 
@@ -360,6 +380,8 @@ Fig: Project Architeture of basic web client
 
 3.  **prod**: use settings define in environments/environment.prod.ts.
 
+[Top](#section)
+
  Data Flow
 ==========
 
@@ -377,6 +399,8 @@ Views folder
 
 3.  **Views/src/app/home**: This folder contains the logic that is used to
     consume the input and produce the output.
+
+[Top](#section)
 
 Components Used for Swordfish Basic Web Client
 ==============================================
