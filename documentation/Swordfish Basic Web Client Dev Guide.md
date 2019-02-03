@@ -551,7 +551,9 @@ Components Used for Swordfish Basic Web Client
     is stored into key and the value of the property is stored into value.
 
     ![](media/4defdb1334bc5d23c205af6addf03ee0.png)
+    
 [Top](#section)
+
     **pipes/routeParams.ts**: To get the name of the current active collection
     from the link this pipe is used.
 
@@ -559,6 +561,7 @@ Components Used for Swordfish Basic Web Client
 
 -   **dist folder:** This folder contains the compiled code of the angular
     application.
+
 ========
 
 [Top](#section)
