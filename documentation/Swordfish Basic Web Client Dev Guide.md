@@ -18,7 +18,7 @@ Contents
 - [Disclaimer](#disclaimer)
 - [Introduction](#introduction)
 - [Technology](#technology)
-  * [CORS (Cross-origin resource sharing)](#-cors--cross-origin-resource-sharing-----)
+  * [CORS (Cross-origin resource sharing)](#cors-cross-origin-resource-sharing)
 - [Project Structure of Swordfish Basic Web Client](#project-structure-of-swordfish-basic-web-client)
 - [Data Flow](#data-flow)
 - [Components Used for Swordfish Basic Web Client](#components-used-for-swordfish-basic-web-client)
@@ -552,7 +552,6 @@ Components Used for Swordfish Basic Web Client
 
     ![](media/4defdb1334bc5d23c205af6addf03ee0.png)
     
-[Top](#section)
 
     **pipes/routeParams.ts**: To get the name of the current active collection
     from the link this pipe is used.
@@ -561,7 +560,6 @@ Components Used for Swordfish Basic Web Client
 
 -   **dist folder:** This folder contains the compiled code of the angular
     application.   
-==========
 
 
 [Top](#section)
