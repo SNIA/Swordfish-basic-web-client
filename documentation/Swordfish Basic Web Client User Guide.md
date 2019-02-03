@@ -1,10 +1,28 @@
+
+<a name="section"></a>
+
 ![https://www.snia.org/sites/default/files/SMI/member-logos/SNIA_SwordfishLogo%20Tag.jpg](media/31f6d669644d7fa491ff3b007c3e5b34.jpg)
 
-SNIA SwordfishTM Basic Web Client User Guide
-============================================
+#  SNIA Swordfish<sup>TM</sup> Basic Web Client User Guide
 
 The purpose of this User Guide is to illustrate how the Basic Web Client can connect to one or more Swordfish services including the Swordfish API Emulator, and present in a web UI frame the entire Redfish and Swordfish hierarchy. Developer and installation guides are also available.
-============================================================================================================================================================================================================================================================================================
+
+
+
+Contents
+    + [Introduction](#introduction)
+    + [Run-time Environment](#run-time-environment)
+        * [Default Port](#default-port)
+        * [Default Web server](#default-web-server)
+    + [Swordfish Basic Web Client Functional Areas](#swordfish-basic-web-client-functional-areas)
+    + [Basic Web Client Application Login](#basic-web-client-application-login)
+    + [Add Swordfish Services](#add-swordfish-services)
+    + [Delete Swordfish Service](#delete-swordfish-service)
+    + [Add Collection](#add-collection)
+    + [Delete Collection](#delete-collection)
+    + [Edit Properties](#edit-properties)
+    + [Logout](#logout)
+
 
 **Disclaimer**
 
@@ -18,6 +36,8 @@ connection with the furnishing, performance, or use.
 Suggestions for revisions should be directed to http://www.snia.org/feedback/.
 
 Copyright © 2016-2019 Storage Networking Industry Association.
+
+[Top](#section)
 
 ### Introduction 
 
