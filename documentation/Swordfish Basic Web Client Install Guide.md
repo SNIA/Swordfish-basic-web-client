@@ -3,6 +3,7 @@
 SNIA SwordfishTM Basic Web Client Installation Guide
 ====================================================
 
+
 The purpose of this Installation Guide is to illustrate the Swordfish Basic Web
 Client installation steps needed to enable the client to connect to one or more
 Swordfish services and present in a web UI frame the entire Redfish and
@@ -86,11 +87,12 @@ to enable appropriate operation of the Swordfish Basic Web Client.
 | **Express**          | 4.15.5              |
 | **IDE**              | WebStorm (optional) |
 
+
 2. Environment Set up 
-======================
+
 
 2.1 Windows
------------
+==========
 
 1.  Download the node.js from <https://nodejs.org/en/download/>
 
@@ -106,7 +108,7 @@ to enable appropriate operation of the Swordfish Basic Web Client.
     (commands.bat) file.
 
 2.2 Linux 
-----------
+==========
 
 1.  **Prerequisites**
 
@@ -137,7 +139,7 @@ to enable appropriate operation of the Swordfish Basic Web Client.
     the command:
 
     **ruby -e "\$(curl -fsSL
-    https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"**
+    https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
 
 -   Follow the instructions in the terminal to complete the installation
     process.
@@ -173,7 +175,7 @@ to enable appropriate operation of the Swordfish Basic Web Client.
     **brew install angular-cli** or **npm install -g express**
 
 3. Web Client Installation
-==========================
+==========
 
 >   Run the below commands in terminal/console window, if you are running the
 >   application for the first time.
@@ -230,13 +232,13 @@ to enable appropriate operation of the Swordfish Basic Web Client.
 >   Directly run the application using npm start.
 
 4. Directly Running the Application
-===================================
+==========
 
 If the application is already built and requires no changes, run **npm start**
 from the command prompt where your application resides.
 
 5. Port and firewall configuration
-==================================
+==========
 
 -   Allow access for firewall while installing NodeJS.
 
