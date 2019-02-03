@@ -3,7 +3,7 @@
 
 ![https://www.snia.org/sites/default/files/SMI/member-logos/SNIA_SwordfishLogo%20Tag.jpg](media/31f6d669644d7fa491ff3b007c3e5b34.jpg)
 
-**SNIA SwordfishTM Basic Web Client Developer Guide**
+# SNIA Swordfish<sup>TM</sup> Basic Web Client Developer Guide
 
 The purpose of this Developer Guide is to illustrate how developers can deploy
 the Basic Web Client to connect to one or more Swordfish services including the
@@ -420,6 +420,8 @@ Components Used for Swordfish Basic Web Client
     **var** path = require(**'path'**);  
     **var** *request* = require(**'request'**);
 
+[Top](#section)
+
 -   To handle CORS issue, added required headers using app.use().
 
 >   app.use(**function**(req, res, next) {  
@@ -467,6 +469,8 @@ Components Used for Swordfish Basic Web Client
 -   Bootstrap: you can specify which component should bootstrap/load first into
     the browser in the bootstrap section.
 
+[Top](#section)
+
     ![](media/8bafb709f7213b1df9191642d1088b7b.png)
 
 -   **home.component.ts**:
@@ -499,6 +503,8 @@ Components Used for Swordfish Basic Web Client
 -   componentFactoryResolver.resolveComponentFactory() is used to create a new
     blade(collection blade) if the links do exist for that collection.
 
+[Top](#section)
+
 ![](media/c576ff5e2950834b1a316864743b6a7e.png)
 
 -   **list.component.ts :** The segregation of collection information runs in
@@ -528,6 +534,8 @@ Components Used for Swordfish Basic Web Client
 
 -   http.get is used to make a request to fetch data from the server.
 
+[Top](#section)
+
 ![](media/0c7f6f6eb4f80aa97a4434b3cba3c77f.png)
 
 -   mock API’s are built using express to avoid CORS. So, any request made from
@@ -543,7 +551,7 @@ Components Used for Swordfish Basic Web Client
     is stored into key and the value of the property is stored into value.
 
     ![](media/4defdb1334bc5d23c205af6addf03ee0.png)
-
+[Top](#section)
     **pipes/routeParams.ts**: To get the name of the current active collection
     from the link this pipe is used.
 
@@ -551,6 +559,10 @@ Components Used for Swordfish Basic Web Client
 
 -   **dist folder:** This folder contains the compiled code of the angular
     application.
+========
+
+[Top](#section)
+
 
 Additional information on the SNIA Swordfish specification and use is available
 at https://www.snia.org/swordfish and <https://github.com/SNIA>.
