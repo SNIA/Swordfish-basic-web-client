@@ -1,12 +1,26 @@
+<a name="section"></a>
+
 ![](media/e75d4361e4eee28b5746917c57bad443.jpg)
 
-SNIA SwordfishTM Basic Web Client Installation Guide
+SNIA Swordfish<sup>TM</sup> Basic Web Client Installation Guide
 ====================================================
 
 The purpose of this Installation Guide is to illustrate the Swordfish Basic Web
 Client installation steps needed to enable the client to connect to one or more
 Swordfish services and present in a web UI frame the entire Redfish and
 Swordfish hierarchy. Developer and user guides are also available.
+
+Contents
+- [Disclaimer](#disclaimer)
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Environment Set up](#environment-set-up)
+  * [Windows](#windows)
+  * [Linux](#linux)
+- [Web Client Installation](#web-client-installation)
+- [Directly Running the Application](#directly-running-the-application)
+- [Port and Firewall Configuration](#port-and-firewall-configuration)
+
 
 Disclaimer
 ==========
@@ -21,6 +35,8 @@ connection with the furnishing, performance, or use.
 Suggestions for revisions should be directed to http://www.snia.org/feedback/.
 
 Copyright © 2016-2019 Storage Networking Industry Association.
+
+[Top](#section)
 
 Introduction
 ============
@@ -64,6 +80,8 @@ hierarchy. The basic web client also provides basic capabilities to modify
 configurable Properties (as specified in the schema), as well as providing a
 basic interface to add or remove elements from the service through a Web UI.
 
+[Top](#section)
+
 Prerequisites
 =============
 
@@ -86,6 +104,8 @@ to enable appropriate operation of the Swordfish Basic Web Client.
 | **Express**          | 4.15.5              |
 | **IDE**              | WebStorm (optional) |
 
+[Top](#section)
+
 Environment Set up 
 ===================
 
@@ -104,6 +124,8 @@ Windows
 
     1. Express and angular/cli installation commands are provided in a batch
     (commands.bat) file.
+
+[Top](#section)
 
 Linux 
 ------
@@ -172,6 +194,8 @@ Linux
 
     **brew install angular-cli** or **npm install -g express**
 
+[Top](#section)
+
 Web Client Installation
 =======================
 
@@ -229,6 +253,8 @@ Web Client Installation
 
 >   Directly run the application using npm start.
 
+[Top](#section)
+
 Directly Running the Application
 ================================
 
@@ -245,6 +271,10 @@ Port and Firewall Configuration
 
 -   Refer to the Swordfish Basic Web Client Developer guide on how to change the
     port number.
+
+
+
+[Top](#section)
 
 Additional information on the SNIA Swordfish specification and use is available
 at <https://www.snia.org/swordfish> and <https://github.com/SNIA>.
