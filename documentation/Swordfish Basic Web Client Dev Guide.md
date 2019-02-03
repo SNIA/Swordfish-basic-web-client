@@ -18,7 +18,7 @@ Contents
 - [Disclaimer](#disclaimer)
 - [Introduction](#introduction)
 - [Technology](#technology)
-  * [2.1 CORS (Cross-origin resource sharing**)**](#21-cors--cross-origin-resource-sharing-----)
+  * [CORS (Cross-origin resource sharing)](#-cors--cross-origin-resource-sharing-----)
 - [Project Structure of Swordfish Basic Web Client](#project-structure-of-swordfish-basic-web-client)
 - [Data Flow](#data-flow)
 - [Components Used for Swordfish Basic Web Client](#components-used-for-swordfish-basic-web-client)
@@ -87,7 +87,7 @@ The detailed view of a real time system’s data is organized in a hierarchical
 manner showing the kind of relation (members, links, properties, etc.) between
 them using a fan out user interface design approach.
 
-2.1 CORS (Cross-origin resource sharing**)**
+ CORS (Cross-origin resource sharing)
 --------------------------------------------
 
 -   It is a mechanism that allows restricted resources (e.g. fonts) on a web
@@ -560,9 +560,9 @@ Components Used for Swordfish Basic Web Client
     ![](media/0f19321d05261f8b58b075cc6a6c8a4b.png)
 
 -   **dist folder:** This folder contains the compiled code of the angular
-    application.
+    application.   
+==========
 
-========
 
 [Top](#section)
 
