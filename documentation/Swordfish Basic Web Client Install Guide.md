@@ -216,35 +216,34 @@ Web Client Installation
 
 1.   **cd views && npm install **
 
-    cd views change the current working directory(project) path to views folder
-    where angular application resides.
+   cd views change the current working directory(project) path to views folder
+   where angular application resides.
 
-     npm install will install all modules listed as dependencies in package.
-    Json in to the local node modules folder, which are required to run the
-    angular application.
+   npm install will install all modules listed as dependencies in package.
+   Json in to the local node modules folder, which are required to run the
+   angular application.
 
 2.   **ng build **
 
-    -   The ng build command is intended for building the app and deploying the
-        build artifacts.
+     The ng build command is intended for building the app and deploying the build artifacts.
 
-    -   The build artifacts will be stored in the dist directory.
+     The build artifacts will be stored in the dist directory.
 
 3.   **cd.. && npm install** 
 
--   **cd..** reverts the path from views folder to project folder.
+    **cd..** reverts the path from views folder to project folder.
 
--   **npm** install installs all modules listed as dependencies in project's
+    **npm** install installs all modules listed as dependencies in project's
     package.json into the local node modules folder required to run the node
     application. (package.json is a filename containing the included dependency
     packages).
     
 4.   **npm start** 
 
--   This runs a command specified in the package. json’s "start" property of its
+    This runs a command specified in the package. json’s "start" property of its
     "scripts" object.
 
--   npm scripts let you group together and run logically related commands and
+    npm scripts let you group together and run logically related commands and
     establishes a development server to execute the code, launches the
     application on browser.
 
@@ -258,9 +257,9 @@ Web Client Installation
 
 Follow the below steps to build and run the application.
 
-    **cd views** && **ng build** 
+   **cd views** && **ng build** 
 
-    **cd..** && **npm start** 
+   **cd..** && **npm start** 
 
    Or 
 
