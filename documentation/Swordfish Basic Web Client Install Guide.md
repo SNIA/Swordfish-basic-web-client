@@ -48,7 +48,7 @@ Copyright © 2016-2019 Storage Networking Industry Association.
 Introduction
 ============
 
-SNIA Swordfish™ Specification
+#### SNIA Swordfish™ Specification
 
 The SNIA Swordfish™ specification helps to provide a unified approach for the
 management of storage and servers in hyperscale and cloud infrastructure
@@ -67,7 +67,7 @@ IT administrators need to do with storage equipment and storage services in a
 data center. As a result, the API provides functionality that simplifies the way
 storage can be allocated, monitored, and managed.
 
-SNIA Swordfish Basic Web Client
+#### SNIA Swordfish Basic Web Client
 
 The Swordfish Basic Web Client can connect to one or more Swordfish or Redfish
 services (including the Swordfish API Emulator), and present in a web UI frame
@@ -124,7 +124,7 @@ Windows Set Up Steps
 
 2.  Install node.exe file.
 
->   note: **npm** will be installed along with node.
+    note: **npm** will be installed along with node.
 
 1.  Run the batch file for successful installation of Express and angular/cli
 
@@ -145,16 +145,16 @@ Linux Set Up Steps
 2.  For **Ubuntu** or **Debian**-based Linux distributions, run the following
     command in your terminal:
 
->   **sudo apt-get install build-essential curl git m4 ruby texinfo libbz2-dev
->   libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev**
+    **sudo apt-get install build-essential curl git m4 ruby texinfo libbz2-dev
+    libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev**
 
 1.  Then select **Y** to continue and wait for the packages to be installed.
 
 2.  For **Fedora** based Linux distributions run the following command in your
     terminal application:
 
->   **sudo yum groupinstall 'Development Tools' && sudo yum install curl git m4
->   ruby texinfo bzip2-devel curl-devel expat-devel ncurses-devel zlib-devel**
+    **sudo yum groupinstall 'Development Tools' && sudo yum install curl git m4
+    ruby texinfo bzip2-devel curl-devel expat-devel ncurses-devel zlib-devel**
 
 1.  Then select Y to continue and wait for the packages to be installed.
 
@@ -174,11 +174,11 @@ Linux Set Up Steps
 2.  Once Linux brew is installed, you’ll need add the following 3 lines to your
     .bashrcor .zshrc file:
 
->   **export PATH="\$HOME/.linuxbrew/bin:\$PATH"**
+    **export PATH="\$HOME/.linuxbrew/bin:\$PATH"**
 
->   **export MANPATH="\$HOME/.linuxbrew/share/man:\$MANPATH"**
+    **export MANPATH="\$HOME/.linuxbrew/share/man:\$MANPATH"**
 
->   **export INFOPATH="\$HOME/.linuxbrew/share/info:\$INFOPATH"**
+    **export INFOPATH="\$HOME/.linuxbrew/share/info:\$INFOPATH"**
 
 [Top](#section)
 
@@ -188,22 +188,22 @@ Node and npm Installation
 
 1.  Open the terminal and run the following command:
 
-**brew install node**
+    **brew install node**
 
 1.  To Test for successful installation of node and npm go to terminal and type:
 
->   **node -v**
+    **node -v**
 
->   **npm -v**
+    **npm -v**
 
 1.  This should print the version numbers of node and npm.
 
 2.  For installation of angular-cli and express, go to terminal and run the
     following commands:
 
->   **brew install angular-cli** or **npm install -g \@angular/cli\@latest**
+    **brew install angular-cli** or **npm install -g \@angular/cli\@latest**
 
->   **brew install angular-cli** or **npm install -g express**
+    **brew install angular-cli** or **npm install -g express**
 
 [Top](#section)
 
@@ -211,15 +211,15 @@ Node and npm Installation
 Web Client Installation
 =======================
 
->   Run the below commands in terminal/console window, if you are running the
->   application for the first time.
+    Run the below commands in terminal/console window, if you are running the
+    application for the first time.
 
 1.  **cd views && npm install **
 
--   cd views change the current working directory(project) path to views folder
+    cd views change the current working directory(project) path to views folder
     where angular application resides.
 
--    npm install will install all modules listed as dependencies in package.
+     npm install will install all modules listed as dependencies in package.
     Json in to the local node modules folder, which are required to run the
     angular application.
 
