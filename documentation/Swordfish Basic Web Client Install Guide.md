@@ -148,30 +148,30 @@ Linux Set Up Steps
     **sudo apt-get install build-essential curl git m4 ruby texinfo libbz2-dev
     libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev**
 
-1.  Then select **Y** to continue and wait for the packages to be installed.
+3.  Then select **Y** to continue and wait for the packages to be installed.
 
-2.  For **Fedora** based Linux distributions run the following command in your
+4.  For **Fedora** based Linux distributions run the following command in your
     terminal application:
 
     **sudo yum groupinstall 'Development Tools' && sudo yum install curl git m4
     ruby texinfo bzip2-devel curl-devel expat-devel ncurses-devel zlib-devel**
 
-1.  Then select Y to continue and wait for the packages to be installed.
+5.  Then select Y to continue and wait for the packages to be installed.
 
-2.  **Homebrew**. Homebrew is a package manager originally for the Mac, but it’s
+6.  **Homebrew**. Homebrew is a package manager originally for the Mac, but it’s
     been ported to Linux as Linux brew, making installing most open-source
     software (like Node) as simple as writing: brew install node.
 
-3.  To install Homebrew for Linux, open your terminal application and paste in
+7.  To install Homebrew for Linux, open your terminal application and paste in
     the command:
 
->   **ruby -e "\$(curl -fsSL
->   https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"**
+    **ruby -e "\$(curl -fsSL
+    https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"**
 
-1.  Follow the instructions in the terminal to complete the installation
+8.  Follow the instructions in the terminal to complete the installation
     process.
 
-2.  Once Linux brew is installed, you’ll need add the following 3 lines to your
+9.  Once Linux brew is installed, you’ll need add the following 3 lines to your
     .bashrcor .zshrc file:
 
     **export PATH="\$HOME/.linuxbrew/bin:\$PATH"**
@@ -190,15 +190,15 @@ Node and npm Installation
 
     **brew install node**
 
-1.  To Test for successful installation of node and npm go to terminal and type:
+2.  To Test for successful installation of node and npm go to terminal and type:
 
     **node -v**
 
     **npm -v**
 
-1.  This should print the version numbers of node and npm.
+3.  This should print the version numbers of node and npm.
 
-2.  For installation of angular-cli and express, go to terminal and run the
+4.  For installation of angular-cli and express, go to terminal and run the
     following commands:
 
     **brew install angular-cli** or **npm install -g \@angular/cli\@latest**
@@ -214,7 +214,7 @@ Web Client Installation
     Run the below commands in terminal/console window, if you are running the
     application for the first time.
 
-1.  **cd views && npm install **
+1.   **cd views && npm install **
 
     cd views change the current working directory(project) path to views folder
     where angular application resides.
@@ -223,14 +223,14 @@ Web Client Installation
     Json in to the local node modules folder, which are required to run the
     angular application.
 
-1.  **ng build **
+2.   **ng build **
 
     -   The ng build command is intended for building the app and deploying the
         build artifacts.
 
     -   The build artifacts will be stored in the dist directory.
 
-2.  **cd.. && npm install** 
+3.   **cd.. && npm install** 
 
 -   **cd..** reverts the path from views folder to project folder.
 
@@ -238,8 +238,8 @@ Web Client Installation
     package.json into the local node modules folder required to run the node
     application. (package.json is a filename containing the included dependency
     packages).
-
-1.  **npm start** 
+    
+4.   **npm start** 
 
 -   This runs a command specified in the package. json’s "start" property of its
     "scripts" object.
@@ -248,23 +248,23 @@ Web Client Installation
     establishes a development server to execute the code, launches the
     application on browser.
 
-1.  Open **http://localhost:3000/** in your browser to access the Web Client. 
+5.  Open **http://localhost:3000/** in your browser to access the Web Client. 
 
->   **npm start** will launch the application on browser's http protocol and
->   localhost as IPaddress on port 3000.
+    **npm start** will launch the application on browser's http protocol and
+    localhost as IPaddress on port 3000.
 
->   \*\* Note: Build to angular application is required upon any new pull
->   request or if any changes are detected.
+    \*\* Note: Build to angular application is required upon any new pull
+    request or if any changes are detected.
 
->   Follow the below steps to build and run the application.
+Follow the below steps to build and run the application.
 
-1.  **cd views** && **ng build** 
+    **cd views** && **ng build** 
 
-2.  **cd..** && **npm start** 
+    **cd..** && **npm start** 
 
->   Or 
+   Or 
 
->   Directly run the application using **npm start.**
+   Directly run the application using **npm start.**
 
 [Top](#section)
 
