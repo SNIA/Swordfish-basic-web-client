@@ -2,8 +2,6 @@
 
 ![](media/e75d4361e4eee28b5746917c57bad443.jpg)
 
-
-
 SNIA Swordfish<sup>TM</sup> Basic Web Client Installation Guide
 ====================================================
 
@@ -25,11 +23,6 @@ Contents
 - [Port and Firewall Configuration](#port-and-firewall-configuration)
 
 
-![](media/e75d4361e4eee28b5746917c57bad443.jpg)
-
-SNIA SwordfishTM Basic Web Client Installation Guide
-====================================================
-
 The purpose of this Installation Guide is to illustrate the Swordfish Basic Web
 Client installation steps needed to enable the client to connect to one or more
 Swordfish services and present in a web UI frame the entire Redfish and
@@ -48,6 +41,9 @@ connection with the furnishing, performance, or use.
 Suggestions for revisions should be directed to http://www.snia.org/feedback/.
 
 Copyright © 2016-2019 Storage Networking Industry Association.
+
+[Top](#section)
+
 
 Introduction
 ============
@@ -91,6 +87,9 @@ hierarchy. The basic web client also provides basic capabilities to modify
 configurable Properties (as specified in the schema), as well as providing a
 basic interface to add or remove elements from the service through a Web UI.
 
+[Top](#section)
+
+
 Prerequisites
 =============
 
@@ -113,6 +112,8 @@ to enable appropriate operation of the Swordfish Basic Web Client.
 | **Express**          | 4.15.5              |
 | **IDE**              | WebStorm (optional) |
 
+[Top](#section)
+
 Environment Set Up for Windows or Linux
 =======================================
 
@@ -131,6 +132,9 @@ Windows Set Up Steps
 
     Express and angular/cli installation commands are provided in a batch
     (commands.bat) file.
+
+[Top](#section)
+
 
 Linux Set Up Steps
 ------------------
@@ -176,6 +180,9 @@ Linux Set Up Steps
 
 >   **export INFOPATH="\$HOME/.linuxbrew/share/info:\$INFOPATH"**
 
+[Top](#section)
+
+
 Node and npm Installation
 =========================
 
@@ -197,6 +204,9 @@ Node and npm Installation
 >   **brew install angular-cli** or **npm install -g \@angular/cli\@latest**
 
 >   **brew install angular-cli** or **npm install -g express**
+
+[Top](#section)
+
 
 Web Client Installation
 =======================
@@ -256,11 +266,17 @@ Web Client Installation
 
 >   Directly run the application using **npm start.**
 
+[Top](#section)
+
+
 Directly Running the Application
 ================================
 
 If the application is already built and requires no changes, run **npm start**
 from the command prompt where your application resides.
+
+[Top](#section)
+
 
 Port and Firewall Configuration
 ===============================
@@ -272,7 +288,9 @@ Port and Firewall Configuration
 
 -   Refer to the Swordfish Basic Web Client Developer guide on how to change the
     port number.
-    
+
+[Top](#section)
+
 
 Additional information on the SNIA Swordfish specification and use is available
 at <https://www.snia.org/swordfish> and <https://github.com/SNIA>.
