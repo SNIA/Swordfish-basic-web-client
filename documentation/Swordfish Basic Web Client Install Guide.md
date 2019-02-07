@@ -2,6 +2,8 @@
 
 ![](media/e75d4361e4eee28b5746917c57bad443.jpg)
 
+
+
 SNIA Swordfish<sup>TM</sup> Basic Web Client Installation Guide
 ====================================================
 
@@ -14,13 +16,24 @@ Contents
 - [Disclaimer](#disclaimer)
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
-- [Environment Set up](#environment-set-up)
-  * [Windows](#windows)
-  * [Linux](#linux)
+- [Environment Set Up for Windows or Linux](#environment-set-up-for-windows-or-linux)
+  * [Windows Set Up Steps](#windows-set-up-steps)
+  * [Linux Set Up Steps](#linux-set-up-steps)
+- [Node and npm Installation](#node-and-npm-installation)
 - [Web Client Installation](#web-client-installation)
 - [Directly Running the Application](#directly-running-the-application)
 - [Port and Firewall Configuration](#port-and-firewall-configuration)
 
+
+![](media/e75d4361e4eee28b5746917c57bad443.jpg)
+
+SNIA SwordfishTM Basic Web Client Installation Guide
+====================================================
+
+The purpose of this Installation Guide is to illustrate the Swordfish Basic Web
+Client installation steps needed to enable the client to connect to one or more
+Swordfish services and present in a web UI frame the entire Redfish and
+Swordfish hierarchy. Developer and user guides are also available.
 
 Disclaimer
 ==========
@@ -35,8 +48,6 @@ connection with the furnishing, performance, or use.
 Suggestions for revisions should be directed to http://www.snia.org/feedback/.
 
 Copyright © 2016-2019 Storage Networking Industry Association.
-
-[Top](#section)
 
 Introduction
 ============
@@ -80,8 +91,6 @@ hierarchy. The basic web client also provides basic capabilities to modify
 configurable Properties (as specified in the schema), as well as providing a
 basic interface to add or remove elements from the service through a Web UI.
 
-[Top](#section)
-
 Prerequisites
 =============
 
@@ -104,97 +113,90 @@ to enable appropriate operation of the Swordfish Basic Web Client.
 | **Express**          | 4.15.5              |
 | **IDE**              | WebStorm (optional) |
 
-[Top](#section)
+Environment Set Up for Windows or Linux
+=======================================
 
-Environment Set up 
-===================
-
-Windows
--------
+Windows Set Up Steps
+--------------------
 
 1.  Download the node.js from <https://nodejs.org/en/download/>
 
 2.  Install node.exe file.
 
->   **note**: npm will be installed along with node
+>   note: **npm** will be installed along with node.
 
 1.  Run the batch file for successful installation of Express and angular/cli
 
     [Image: commands.bat](#port-and-firewall-configuration)
 
-    1. Express and angular/cli installation commands are provided in a batch
+    Express and angular/cli installation commands are provided in a batch
     (commands.bat) file.
 
-[Top](#section)
+Linux Set Up Steps
+------------------
 
-Linux 
-------
-
-1.  **Prerequisites**
-
--   Install **Ruby** and **GCC**. Versions (Ruby 1.8.6 or newer and GCC 4.2 or
+1.  Install **Ruby** and **GCC**. Versions (Ruby 1.8.6 or newer and GCC 4.2 or
     newer.)
 
--   For **Ubuntu** or **Debian**-based Linux distributions, run the following
+2.  For **Ubuntu** or **Debian**-based Linux distributions, run the following
     command in your terminal:
 
-    **sudo apt-get install build-essential curl git m4 ruby texinfo libbz2-dev
-    libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev**
+>   **sudo apt-get install build-essential curl git m4 ruby texinfo libbz2-dev
+>   libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev**
 
--   Then select **Y** to continue and wait for the packages to be installed.
+1.  Then select **Y** to continue and wait for the packages to be installed.
 
--   For **Fedora** based Linux distributions run the following command in your
+2.  For **Fedora** based Linux distributions run the following command in your
     terminal application:
 
-    **sudo yum groupinstall 'Development Tools' && sudo yum install curl git m4
-    ruby texinfo bzip2-devel curl-devel expat-devel ncurses-devel zlib-devel**
+>   **sudo yum groupinstall 'Development Tools' && sudo yum install curl git m4
+>   ruby texinfo bzip2-devel curl-devel expat-devel ncurses-devel zlib-devel**
 
--   Then select Y to continue and wait for the packages to be installed.
+1.  Then select Y to continue and wait for the packages to be installed.
 
--   **Homebrew**. Homebrew is a package manager originally for the Mac, but it’s
+2.  **Homebrew**. Homebrew is a package manager originally for the Mac, but it’s
     been ported to Linux as Linux brew, making installing most open-source
     software (like Node) as simple as writing: brew install node.
 
--   To install Homebrew for Linux, open your terminal application and paste in
+3.  To install Homebrew for Linux, open your terminal application and paste in
     the command:
 
-    **ruby -e "\$(curl -fsSL
-    https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"**
+>   **ruby -e "\$(curl -fsSL
+>   https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"**
 
--   Follow the instructions in the terminal to complete the installation
+1.  Follow the instructions in the terminal to complete the installation
     process.
 
--   Once Linux brew is installed, you’ll need add the following 3 lines to your
+2.  Once Linux brew is installed, you’ll need add the following 3 lines to your
     .bashrcor .zshrc file:
 
->   export PATH="\$HOME/.linuxbrew/bin:\$PATH"
+>   **export PATH="\$HOME/.linuxbrew/bin:\$PATH"**
 
->   export MANPATH="\$HOME/.linuxbrew/share/man:\$MANPATH"
+>   **export MANPATH="\$HOME/.linuxbrew/share/man:\$MANPATH"**
 
->   export INFOPATH="\$HOME/.linuxbrew/share/info:\$INFOPATH"
+>   **export INFOPATH="\$HOME/.linuxbrew/share/info:\$INFOPATH"**
 
-1.  **Node and npm installation**
+Node and npm Installation
+=========================
 
--   Open the terminal and run the following command
+1.  Open the terminal and run the following command:
 
->   **brew install node**
+**brew install node**
 
--   To Test for successful installation if node and npm go to terminal and type
+1.  To Test for successful installation of node and npm go to terminal and type:
 
-    **node -v**
+>   **node -v**
 
-    **npm -v**
+>   **npm -v**
 
--   This should print the version numbers of node and npm
+1.  This should print the version numbers of node and npm.
 
--   For installation of angular-cli and express, go to terminal and run the
-    following commands
+2.  For installation of angular-cli and express, go to terminal and run the
+    following commands:
 
-    **brew install angular-cli** or **npm install -g \@angular/cli\@latest**
+>   **brew install angular-cli** or **npm install -g \@angular/cli\@latest**
 
-    **brew install angular-cli** or **npm install -g express**
-
-[Top](#section)
+>   **brew install angular-cli** or **npm install -g express**
 
 Web Client Installation
 =======================
@@ -205,7 +207,7 @@ Web Client Installation
 1.  **cd views && npm install **
 
 -   cd views change the current working directory(project) path to views folder
-    where angular application resides
+    where angular application resides.
 
 -    npm install will install all modules listed as dependencies in package.
     Json in to the local node modules folder, which are required to run the
@@ -216,44 +218,43 @@ Web Client Installation
     -   The ng build command is intended for building the app and deploying the
         build artifacts.
 
-    -   The build artifacts will be stored in the dist directory
+    -   The build artifacts will be stored in the dist directory.
 
-2.  **cd .. && npm install** 
+2.  **cd.. && npm install** 
 
--   cd ..reverts the path from views folder to project folder
+-   **cd..** reverts the path from views folder to project folder.
 
--   npm install install all modules listed as dependencies in project's package.
-    jsonin to the local node modules folder required to run the node
-    application.
+-   **npm** install installs all modules listed as dependencies in project's
+    package.json into the local node modules folder required to run the node
+    application. (package.json is a filename containing the included dependency
+    packages).
 
 1.  **npm start** 
 
--   This runs an arbitrary command specified in the package. json’s "start"
-    property of its "scripts" object.
+-   This runs a command specified in the package. json’s "start" property of its
+    "scripts" object.
 
--   Npm scripts let you group together and run logically related commands and
+-   npm scripts let you group together and run logically related commands and
     establishes a development server to execute the code, launches the
     application on browser.
 
 1.  Open **http://localhost:3000/** in your browser to access the Web Client. 
 
->   npm start will launch the application on browser's http protocol and
->   localhost as IPaddress on port 3000 
+>   **npm start** will launch the application on browser's http protocol and
+>   localhost as IPaddress on port 3000.
 
 >   \*\* Note: Build to angular application is required upon any new pull
 >   request or if any changes are detected.
 
 >   Follow the below steps to build and run the application.
 
-1.  cd views && ng build 
+1.  **cd views** && **ng build** 
 
-2.  cd .. && npm start 
+2.  **cd..** && **npm start** 
 
 >   Or 
 
->   Directly run the application using npm start.
-
-[Top](#section)
+>   Directly run the application using **npm start.**
 
 Directly Running the Application
 ================================
@@ -271,10 +272,7 @@ Port and Firewall Configuration
 
 -   Refer to the Swordfish Basic Web Client Developer guide on how to change the
     port number.
-
-
-
-[Top](#section)
+    
 
 Additional information on the SNIA Swordfish specification and use is available
 at <https://www.snia.org/swordfish> and <https://github.com/SNIA>.
