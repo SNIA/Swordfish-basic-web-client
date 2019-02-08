@@ -1,6 +1,6 @@
 ![https://www.snia.org/sites/default/files/SMI/member-logos/SNIA_SwordfishLogo%20Tag.jpg](media/31f6d669644d7fa491ff3b007c3e5b34.jpg)
 
-SNIA SwordfishTM Basic Web Client Developer Guide
+- [SNIA SwordfishTM Basic Web Client Developer Guide](#snia-swordfishtm-basic-web-client-developer-guide)
 =================================================
 
 The purpose of this Developer Guide is to illustrate how developers can deploy
@@ -10,6 +10,21 @@ Swordfish hierarchy. The Swordfish Basic Web Client provides basic capabilities
 for managing multiple services simultaneously, modifying configurable properties
 and adding or removing elements from the service through the web UI.
 Installation and user guides are also available.
+
+Contents
+- [Disclaimer](#disclaimer)
+- [Introduction](#introduction)
+- [Technology](#technology)
+  * [CORS (Cross-origin resource sharing)](#cors--cross-origin-resource-sharing-----)
+  * [URI Request and Response model](#uri-request-and-response-model)
+  * [Node.js](#nodejs)
+  * [Express](#express)
+  * [Angular-cli](#angular-cli)
+- [Overview of Redfish/Swordfish usage](#overview-of-redfish-swordfish-usage)
+- [Redfish/Swordfish usage using web client](#redfish-swordfish-usage-using-web-client)
+- [Project Structure of Swordfish Basic Web Client](#project-structure-of-swordfish-basic-web-client)
+- [Data Flow](#data-flow)
+- [Components Used for Swordfish Basic Web Client](#components-used-for-swordfish-basic-web-client)
 
 Disclaimer
 ==========
@@ -70,7 +85,7 @@ The detailed view of a real time system’s data is organized in a hierarchical
 manner showing the kind of relation (members, links, properties, etc.) between
 them using a fan out user interface design approach.
 
-CORS (Cross-origin resource sharing**)**
+CORS (Cross-Origin Resource Sharing)
 ----------------------------------------
 
 -   Cross-origin resource sharing (CORS) is a mechanism that allows restricted
