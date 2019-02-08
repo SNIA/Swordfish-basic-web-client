@@ -1,9 +1,7 @@
-
-<a name="section"></a>
-
 ![https://www.snia.org/sites/default/files/SMI/member-logos/SNIA_SwordfishLogo%20Tag.jpg](media/31f6d669644d7fa491ff3b007c3e5b34.jpg)
 
-# SNIA Swordfish<sup>TM</sup> Basic Web Client Developer Guide
+SNIA SwordfishTM Basic Web Client Developer Guide
+=================================================
 
 The purpose of this Developer Guide is to illustrate how developers can deploy
 the Basic Web Client to connect to one or more Swordfish services including the
@@ -12,17 +10,6 @@ Swordfish hierarchy. The Swordfish Basic Web Client provides basic capabilities
 for managing multiple services simultaneously, modifying configurable properties
 and adding or removing elements from the service through the web UI.
 Installation and user guides are also available.
-
-Contents
-========
-- [Disclaimer](#disclaimer)
-- [Introduction](#introduction)
-- [Technology](#technology)
-  * [CORS (Cross-origin resource sharing)](#cors-cross-origin-resource-sharing)
-- [Project Structure of Swordfish Basic Web Client](#project-structure-of-swordfish-basic-web-client)
-- [Data Flow](#data-flow)
-- [Components Used for Swordfish Basic Web Client](#components-used-for-swordfish-basic-web-client)
-
 
 Disclaimer
 ==========
@@ -37,8 +24,6 @@ connection with the furnishing, performance, or use.
 Suggestions for revisions should be directed to http://www.snia.org/feedback/.
 
 Copyright © 2016-2019 Storage Networking Industry Association.
-
-[Top](#section)
 
 Introduction
 ============
@@ -74,10 +59,8 @@ hierarchy. The basic web client also provides basic capabilities to modify
 configurable Properties (as specified in the schema), as well as providing a
 basic interface to add or remove elements from the service through a Web UI.
 
-[Top](#section)
-
- Technology 
-============
+Technology 
+===========
 
 The Swordfish Basic Web Client provides basic capabilities for managing multiple
 services simultaneously, modifying configurable Properties and adding or
@@ -87,12 +70,12 @@ The detailed view of a real time system’s data is organized in a hierarchical
 manner showing the kind of relation (members, links, properties, etc.) between
 them using a fan out user interface design approach.
 
- CORS (Cross-origin resource sharing)
---------------------------------------------
+CORS (Cross-origin resource sharing**)**
+----------------------------------------
 
--   It is a mechanism that allows restricted resources (e.g. fonts) on a web
-    page to be requested from another domain outside the domain from which the
-    first resource was served.
+-   Cross-origin resource sharing (CORS) is a mechanism that allows restricted
+    resources (e.g. fonts) on a web page to be requested from another domain,
+    outside the domain from which the first resource was served.
 
 -   A web page may freely embed cross-origin images, stylesheets, scripts,
     frames, and videos.
@@ -110,7 +93,8 @@ them using a fan out user interface design approach.
 -   Servers can also notify clients whether "credentials" (including Cookies and
     HTTP Authentication data) should be sent with requests
 
-    1.  URI Request and Response model
+URI Request and Response model
+------------------------------
 
 -   The Web Request and Web Response classes contain methods and properties that
     apply generically across the different supported protocols and enable
@@ -139,7 +123,8 @@ them using a fan out user interface design approach.
     end-users, it is the primary object interacted with when it comes time to
     add data to a view.
 
-    1.  Implications of Node
+Node.js
+-------
 
 -   Node (or more formally Node.js) is an open-source, cross-platform, runtime
     environment that allows developers to create all kinds of server-side tools
@@ -155,7 +140,8 @@ them using a fan out user interface design approach.
 -   The node package manager (NPM) provides access to hundreds of thousands of
     reusable packages.
 
-    1.  Express
+Express 
+--------
 
 -   Express.js, a Sinatra-inspired web development framework for Node.js, and
     the de-facto standard for the majority of Node.js applications out there
@@ -177,18 +163,19 @@ them using a fan out user interface design approach.
 4.  Add additional request processing "middleware" at any point within the
     request handling pipeline.
 
-    1.  Angular-cli
+Angular-cli
+-----------
 
-        There are two main ways to compile and serve an Angular 2 applications,
-        via web pack or systemjs. For this example, Swordfish Basic Web Client
-        web pack is used.
+There are two main ways to compile and serve an Angular 2 applications, via web
+pack or **systemjs**. For this example, Swordfish Basic Web Client web pack is
+used.
 
--   Any dependency added in the package.json need to be installed.
+-   Any dependency added in the **package.json** need to be installed.
 
--   run npm install to install the package dependencies.
+-   Run **npm** install to install the package dependencies.
 
-1.  The **tsconfig.json** file tells compiler how we want to compile TypeScript
-    files.
+1.  The **tsconfig.json** file tells compiler how we want to compile
+    **TypeScript** files.
 
 2.  The two most important properties are:
 
@@ -222,10 +209,11 @@ them using a fan out user interface design approach.
     -   Here, Angular has instantiated AppHome Component and loaded its template
         into the app-home element.
 
-7.  Inside app.module.ts, inject the AppHome Component into the ‘bootstrap’
+7.  Inside **app.module.ts**, inject the AppHome Component into the ‘bootstrap’
     section.
 
-    1.  Overview of Redfish/Swordfish usage
+Overview of Redfish/Swordfish usage
+-----------------------------------
 
 -   The Swordfish basic web client is compatible with all current versions of
     Redfish/Swordfish services. It parses the json output into various display
@@ -234,7 +222,7 @@ them using a fan out user interface design approach.
 -   Via the Swordfish basic web client, based on the navigation property from
     XML Schema. definitions, links are enabled to click and follow
 
--   The response model is segregated into 4 entities
+-   The response model is segregated into 4 entities, including:
 
 1. Object-Object Entity
 
@@ -253,7 +241,8 @@ them using a fan out user interface design approach.
 -   User can extend the collection in the service by adding a new collection to
     the existing one using add collection functionality.
 
-    1.  Redfish/Swordfish usage using web client
+Redfish/Swordfish usage using web client
+----------------------------------------
 
 1.  **Support to new property**: The newly added property is appended as a part
     of request body to the service that talks with the service. The following
@@ -305,7 +294,7 @@ them using a fan out user interface design approach.
     A JSON is built for the collections based on their respective schema
     definitions.
 
-    Web client talks with the JSON structure using HTTP methods (GET,POST,PUT
+    Web client talks with the JSON structure using HTTP methods (GET, POST, PUT
     and DELETE).
 
     ![](media/412de04f3e2ba17384999c8eb60de390.png)
@@ -319,16 +308,14 @@ them using a fan out user interface design approach.
 
     ![](media/7f7bd0b8464aea4a84a477337890e461.png)
 
-    **getSysOverview** () method in the list.menu.ts file checks for the links
-    present in the collection and further calls the create () method to create a
-    dynamic blade in the UI.
+    **getSysOverview** () method in the **list.menu.ts** file checks for the
+    links present in the collection and further calls the create () method to
+    create a dynamic blade in the UI.
 
     ![](media/a9d29fc0d9b7488d74a52ba6dc17d0eb.png)
 
     Please refer to Swordfish Basic Web Client User Guide on how to add/remove
     collections/properties
-
-[Top](#section)
 
 Project Structure of Swordfish Basic Web Client
 ===============================================
@@ -338,7 +325,7 @@ Project Structure of Swordfish Basic Web Client
 2.  **Package.json:** this file contains list of all the dependencies that are
     required to run an angular-cli.
 
-3.  Run ‘npm install’ to install all the specified dependencies into local
+3.  Run ‘**npm install**’ to install all the specified dependencies into local
     project.
 
 4.  **node_modules** will be created which contains the copy of the
@@ -350,7 +337,7 @@ Project Structure of Swordfish Basic Web Client
 
 ![](media/17d961632beb5749b20c2c487feb448f.png)
 
-Fig: Project Architeture of basic web client
+Project Architeture of basic web client
 
 1.  **views** folder contains the modules and components that are used to build
     the basic web client
@@ -364,23 +351,21 @@ Fig: Project Architeture of basic web client
 4.  **views/src/assets** – This folder contains all the static files,json and
     images that are used across the application.
 
-5.  **.angular-cli.json** - contains the configurations that are required to
-    load the angular-cli.
+5.  **angular-cli.json** - contains the configurations that are required to load
+    the angular-cli.
 
 6.  **views/src/environments -** let you specify settings to customize your
     application behaviour.
 
 -   You can define your own environments in the .angular-cli.json file.
 
--   The default ones are:
+-   The default environments are:
 
 1.  **source**: use settings defined in environments/environment.ts.
 
 2.  **dev**: use settings defined in environments/environment.ts.
 
 3.  **prod**: use settings define in environments/environment.prod.ts.
-
-[Top](#section)
 
  Data Flow
 ==========
@@ -389,25 +374,23 @@ The below diagram illustrates the data flow between components.
 
 ![](media/86986734c7374c1b242311b873c88bdd.png)
 
-Views folder
+Views Folder
 
 1.  Any Modifications/addition of new files that relates to functional change or
     enhancement of the basic web client are to be done to files in this folder.
 
-2.  Middle Ware(app.js): This file is used as middle ware between basic web
+2.  **Middleware(app.js):** This file is used as middleware between basic web
     client and the backend server.
 
 3.  **Views/src/app/home**: This folder contains the logic that is used to
     consume the input and produce the output.
 
-[Top](#section)
-
 Components Used for Swordfish Basic Web Client
 ==============================================
 
--   **App.js**
+App.js
 
--   This acts as a middleware between angular components (basic web client ) and
+-   This acts as a middleware between angular components (basic web client) and
     server (backend).
 
 -   All the required libraries are injected in to the app.js file using
@@ -419,8 +402,6 @@ Components Used for Swordfish Basic Web Client
     **var** http = require(**'http'**);  
     **var** path = require(**'path'**);  
     **var** *request* = require(**'request'**);
-
-[Top](#section)
 
 -   To handle CORS issue, added required headers using app.use().
 
@@ -469,16 +450,14 @@ Components Used for Swordfish Basic Web Client
 -   Bootstrap: you can specify which component should bootstrap/load first into
     the browser in the bootstrap section.
 
-[Top](#section)
-
     ![](media/8bafb709f7213b1df9191642d1088b7b.png)
 
 -   **home.component.ts**:
 
     The Component holds the configuration properties of the component like
-    selector, names of properties, names of events and list of the injectables
+    selector, names of properties, names of events and a list of the injectables
     into the component. The value of the selector can be the same as the string
-    to be used on HTML markup, it doesn’t need to be camel-cased
+    to be used on HTML Markup, it doesn’t need to be camel-cased.
 
     ![](media/64a887682d144eb0640fab577eb36c28.png)
 
@@ -492,18 +471,16 @@ Components Used for Swordfish Basic Web Client
 
     ![](media/ea02acb6af9b3b9af05f074fdbe3540e.png)
 
--   A constructor() is used to load data for html pages when component is
+-   A **constructor()** is used to load data for html pages when component is
     instantiated and to inject dependencies of services.
 
     ![](media/8720c0297746f903d073ff13cebea2ee.png)
 
 -   The logic that identify the links present, properties that exist for a
-    collection is implemented in the create() method.
+    collection is implemented in the **create()** method.
 
--   componentFactoryResolver.resolveComponentFactory() is used to create a new
-    blade(collection blade) if the links do exist for that collection.
-
-[Top](#section)
+-   **componentFactoryResolver.resolveComponentFactory()** is used to create a
+    new blade(collection blade) if the links do exist for that collection.
 
 ![](media/c576ff5e2950834b1a316864743b6a7e.png)
 
@@ -521,20 +498,18 @@ Components Used for Swordfish Basic Web Client
     ![](media/7c6ecb62b4c4415be12ca4d7c64424ae.png)
 
 -   All the properties of the collection is fetched and read entity either
-    object/Array using getSysOverview().
+    object/Array using **getSysOverview()**.
 
     ![](media/655ddbf7412cdbc1d13798777d326c23.png)
 
 -   **home.service.ts:** The service layer from the client side is implemented
-    in home.service.ts file.
+    in **home.service.ts** file.
 
 -   An instance of http is created to make http calls across the browser.
 
     ![](media/1185adff4991423e62d7acc55452a83a.png)
 
--   http.get is used to make a request to fetch data from the server.
-
-[Top](#section)
+-   **http.get** is used to make a request to fetch data from the server.
 
 ![](media/0c7f6f6eb4f80aa97a4434b3cba3c77f.png)
 
@@ -547,23 +522,18 @@ Components Used for Swordfish Basic Web Client
 -   **pipes/key-value.ts**: This file is used to process and format the desired
     data.
 
--   The object/array entities are dived into key-value pairs where the property
-    is stored into key and the value of the property is stored into value.
+The object/array entities are dived into key-value pairs where the property is
+stored into key and the value of the property is stored into value.
 
-    ![](media/4defdb1334bc5d23c205af6addf03ee0.png)
-    
+![](media/4defdb1334bc5d23c205af6addf03ee0.png)
 
-    **pipes/routeParams.ts**: To get the name of the current active collection
-    from the link this pipe is used.
+**pipes/routeParams.ts**: Is used to get the name of the current active
+collection from the link this pipe is used.
 
-    ![](media/0f19321d05261f8b58b075cc6a6c8a4b.png)
+![](media/0f19321d05261f8b58b075cc6a6c8a4b.png)
 
--   **dist folder:** This folder contains the compiled code of the angular
-    application.   
-
-
-[Top](#section)
-
+**dist folder:** This folder contains the compiled code of the angular
+application.
 
 Additional information on the SNIA Swordfish specification and use is available
 at https://www.snia.org/swordfish and <https://github.com/SNIA>.
