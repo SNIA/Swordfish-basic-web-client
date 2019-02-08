@@ -1,6 +1,8 @@
+<a name="section"></a>
+
 ![https://www.snia.org/sites/default/files/SMI/member-logos/SNIA_SwordfishLogo%20Tag.jpg](media/31f6d669644d7fa491ff3b007c3e5b34.jpg)
 
-- [SNIA SwordfishTM Basic Web Client Developer Guide](#snia-swordfishtm-basic-web-client-developer-guide)
+SNIA Swordfish<sup>TM</sup> Basic Web Client Developer Guide
 =================================================
 
 The purpose of this Developer Guide is to illustrate how developers can deploy
@@ -15,13 +17,13 @@ Contents
 - [Disclaimer](#disclaimer)
 - [Introduction](#introduction)
 - [Technology](#technology)
-  * [CORS (Cross-origin resource sharing)](#cors--cross-origin-resource-sharing-----)
-  * [URI Request and Response model](#uri-request-and-response-model)
+  * [CORS (Cross-Origin Resource Sharing)](#cors--cross-origin-resource-sharing-----)
+  * [URI Request and Response Model](#uri-request-and-response-model)
   * [Node.js](#nodejs)
   * [Express](#express)
   * [Angular-cli](#angular-cli)
-- [Overview of Redfish/Swordfish usage](#overview-of-redfish-swordfish-usage)
-- [Redfish/Swordfish usage using web client](#redfish-swordfish-usage-using-web-client)
+- [Overview of Redfish/Swordfish Usage](#overview-of-redfish-swordfish-usage)
+- [Redfish/Swordfish Usage Using Web Client](#redfish\/swordfish-usage-using-web-client)
 - [Project Structure of Swordfish Basic Web Client](#project-structure-of-swordfish-basic-web-client)
 - [Data Flow](#data-flow)
 - [Components Used for Swordfish Basic Web Client](#components-used-for-swordfish-basic-web-client)
@@ -39,6 +41,9 @@ connection with the furnishing, performance, or use.
 Suggestions for revisions should be directed to http://www.snia.org/feedback/.
 
 Copyright © 2016-2019 Storage Networking Industry Association.
+
+[Top](#section)
+
 
 Introduction
 ============
@@ -74,6 +79,9 @@ hierarchy. The basic web client also provides basic capabilities to modify
 configurable Properties (as specified in the schema), as well as providing a
 basic interface to add or remove elements from the service through a Web UI.
 
+[Top](#section)
+
+
 Technology 
 ===========
 
@@ -108,7 +116,7 @@ CORS (Cross-Origin Resource Sharing)
 -   Servers can also notify clients whether "credentials" (including Cookies and
     HTTP Authentication data) should be sent with requests
 
-URI Request and Response model
+URI Request and Response Model
 ------------------------------
 
 -   The Web Request and Web Response classes contain methods and properties that
@@ -227,7 +235,10 @@ used.
 7.  Inside **app.module.ts**, inject the AppHome Component into the ‘bootstrap’
     section.
 
-Overview of Redfish/Swordfish usage
+[Top](#section)
+
+
+Overview of Redfish/Swordfish Usage
 ===================================
 
 -   The Swordfish basic web client is compatible with all current versions of
@@ -256,7 +267,10 @@ Overview of Redfish/Swordfish usage
 -   User can extend the collection in the service by adding a new collection to
     the existing one using add collection functionality.
 
-Redfish/Swordfish usage using web client
+[Top](#section)
+
+
+Redfish/Swordfish Usage Using Web Client
 ========================================
 
 1.  **Support to new property**: The newly added property is appended as a part
@@ -332,6 +346,9 @@ Redfish/Swordfish usage using web client
     Please refer to Swordfish Basic Web Client User Guide on how to add/remove
     collections/properties
 
+[Top](#section)
+
+
 Project Structure of Swordfish Basic Web Client
 ===============================================
 
@@ -400,6 +417,9 @@ Views Folder
 3.  **Views/src/app/home**: This folder contains the logic that is used to
     consume the input and produce the output.
 
+[Top](#section)
+
+
 Components Used for Swordfish Basic Web Client
 ==============================================
 
@@ -420,15 +440,15 @@ App.js
 
 -   To handle CORS issue, added required headers using app.use().
 
->   app.use(**function**(req, res, next) {  
->   res.header(**'Access-Control-Allow-Origin'**, **'\*'**);  
->   res.header(**'Access-Control-Allow-Headers'**, **'Origin, X-Requested-With,
->   Content-Type, Accept,X-Auth-Token,Cookie-Headers'**);  
->   res.header(**'Access-Control-Allow-Methods'**,
->   **'POST,GET,OPTIONS,PUT,DELETE'**);  
->   res.header(**'Allow'**,**'HEAD, GET, PATCH, POST, OPTIONS, DELETE'**);  
->   next();  
->   });
+   app.use(**function**(req, res, next) {  
+   res.header(**'Access-Control-Allow-Origin'**, **'\*'**);  
+   res.header(**'Access-Control-Allow-Headers'**, **'Origin, X-Requested-With,
+   Content-Type, Accept,X-Auth-Token,Cookie-Headers'**);  
+   res.header(**'Access-Control-Allow-Methods'**,
+   **'POST,GET,OPTIONS,PUT,DELETE'**);  
+   res.header(**'Allow'**,**'HEAD, GET, PATCH, POST, OPTIONS, DELETE'**);  
+   next();  
+   });
 
 ![](media/cc2ad47807b58f21162b89962ec8c7d5.png)
 
@@ -549,6 +569,9 @@ collection from the link this pipe is used.
 
 **dist folder:** This folder contains the compiled code of the angular
 application.
+
+[Top](#section)
+
 
 Additional information on the SNIA Swordfish specification and use is available
 at https://www.snia.org/swordfish and <https://github.com/SNIA>.
