@@ -213,7 +213,7 @@ used.
     section.
 
 Overview of Redfish/Swordfish usage
------------------------------------
+===================================
 
 -   The Swordfish basic web client is compatible with all current versions of
     Redfish/Swordfish services. It parses the json output into various display
@@ -242,7 +242,7 @@ Overview of Redfish/Swordfish usage
     the existing one using add collection functionality.
 
 Redfish/Swordfish usage using web client
-----------------------------------------
+========================================
 
 1.  **Support to new property**: The newly added property is appended as a part
     of request body to the service that talks with the service. The following
