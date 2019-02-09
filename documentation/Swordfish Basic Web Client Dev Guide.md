@@ -22,8 +22,8 @@ Contents
   * [Node.js](#nodejs)
   * [Express](#express)
   * [Angular-cli](#angular-cli)
-- [Overview of Redfish/Swordfish Usage](#overview-of-redfish/swordfish-usage)
-- [Redfish/Swordfish Usage Using Web Client](#redfish-/-swordfish-usage-using-web-client)
+- [Overview of Redfish and Swordfish Usage](#overview-of-redfish-and-swordfish-usage)
+- [Redfish and Swordfish Usage Using Web Client](#redfish-and-swordfish-usage-using-web-client)
 - [Project Structure of Swordfish Basic Web Client](#project-structure-of-swordfish-basic-web-client)
 - [Data Flow](#data-flow)
 - [Components Used for Swordfish Basic Web Client](#components-used-for-swordfish-basic-web-client)
@@ -116,6 +116,9 @@ CORS (Cross-Origin Resource Sharing)
 -   Servers can also notify clients whether "credentials" (including Cookies and
     HTTP Authentication data) should be sent with requests
 
+[Top](#section)
+
+
 URI Request and Response Model
 ------------------------------
 
@@ -146,6 +149,9 @@ URI Request and Response Model
     end-users, it is the primary object interacted with when it comes time to
     add data to a view.
 
+[Top](#section)
+
+
 Node.js
 -------
 
@@ -162,6 +168,9 @@ Node.js
 
 -   The node package manager (NPM) provides access to hundreds of thousands of
     reusable packages.
+
+[Top](#section)
+
 
 Express 
 --------
@@ -185,6 +194,9 @@ Express
 
 4.  Add additional request processing "middleware" at any point within the
     request handling pipeline.
+
+[Top](#section)
+
 
 Angular-cli
 -----------
@@ -238,7 +250,7 @@ used.
 [Top](#section)
 
 
-Overview of Redfish/Swordfish Usage
+Overview of Redfish and Swordfish Usage
 ===================================
 
 -   The Swordfish basic web client is compatible with all current versions of
@@ -270,7 +282,7 @@ Overview of Redfish/Swordfish Usage
 [Top](#section)
 
 
-Redfish/Swordfish Usage Using Web Client
+Redfish and Swordfish Usage Using Web Client
 ========================================
 
 1.  **Support to new property**: The newly added property is appended as a part
@@ -398,6 +410,9 @@ Project Architeture of basic web client
 2.  **dev**: use settings defined in environments/environment.ts.
 
 3.  **prod**: use settings define in environments/environment.prod.ts.
+
+[Top](#section)
+
 
  Data Flow
 ==========
@@ -544,6 +559,9 @@ App.js
 
     ![](media/1185adff4991423e62d7acc55452a83a.png)
 
+[Top](#section)
+
+
 -   **http.get** is used to make a request to fetch data from the server.
 
 ![](media/0c7f6f6eb4f80aa97a4434b3cba3c77f.png)
@@ -561,6 +579,9 @@ The object/array entities are dived into key-value pairs where the property is
 stored into key and the value of the property is stored into value.
 
 ![](media/4defdb1334bc5d23c205af6addf03ee0.png)
+
+[Top](#section)
+
 
 **pipes/routeParams.ts**: Is used to get the name of the current active
 collection from the link this pipe is used.
