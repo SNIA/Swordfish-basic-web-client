@@ -114,7 +114,7 @@ CORS (Cross-Origin Resource Sharing)
     actual HTTP request method.
 
 -   Servers can also notify clients whether "credentials" (including Cookies and
-    HTTP Authentication data) should be sent with requests
+    HTTP Authentication data) should be sent with requests.
 
 [Top](#section)
 
@@ -133,21 +133,16 @@ URI Request and Response Model
 
 -   In angular, Request instances are typically created by higher-level classes,
     like Http and Jsonp, but it may occasionally be useful to explicitly create
-    Request instance
+    Request instance.
 
     **Ex**: this.http.request(new Request ({
-
     method: RequestMethod.Get, // could be POST,PUT,DELETE
-
     url: URL, // Endpoint to communicate to server
-
     body:{} // optional
-
     }));
 
 -   **Response Model:** Though this object isn't usually instantiated by
-    end-users, it is the primary object interacted with when it comes time to
-    add data to a view.
+    end-users, it is the primary object interacted with when data is added to a view.
 
 [Top](#section)
 
@@ -156,8 +151,7 @@ Node.js
 -------
 
 -   Node (or more formally Node.js) is an open-source, cross-platform, runtime
-    environment that allows developers to create all kinds of server-side tools
-    and applications in JavaScript.
+    environment that allows developers to create server-side tools and applications in JavaScript.
 
 -   The runtime is intended for use outside of a browser context (i.e. running
     directly on a computer or server OS).
@@ -176,8 +170,7 @@ Express
 --------
 
 -   Express.js, a Sinatra-inspired web development framework for Node.js, and
-    the de-facto standard for the majority of Node.js applications out there
-    today.
+    the de-facto standard for the majority of Node.js applications currently in use.
 
 -   Express is the most popular Node web framework, and is the underlying
     library for a number of other popular Node web frameworks. It provides
@@ -205,7 +198,7 @@ There are two main ways to compile and serve an Angular 2 applications, via web
 pack or **systemjs**. For this example, Swordfish Basic Web Client web pack is
 used.
 
--   Any dependency added in the **package.json** need to be installed.
+-   Any dependency added in the **package.json** needs to be installed.
 
 -   Run **npm** install to install the package dependencies.
 
@@ -213,32 +206,25 @@ used.
     **TypeScript** files.
 
 2.  The two most important properties are:
-
     {
-
     “target”: “ES5” ,
-
     “module”: “commonjs”
-
     }
 
-    -   Here we are setting ECMAScript version to ES5 and modules that we want
-        to generate should be in the commonjs format.
+    -   ECMAScript version  is set to ES5, and desired modules to generate should be in the commonjs format.
 
 3.  The **package.json** file tells how to start the applications.
 
 4.  **Bootstrap** tells the compiler which module and component must be run
     first, we need to specify the bootstrap component.
 
-5.  To Bootstrap the module, include it in main.ts file.
+5.  To **Bootstrap** the module, include it in main.ts file.
 
-6.  To bootstrap our application, include the necessary resources into the
+6.  To bootstrap the application, include the necessary resources into the
     index.html file.
 
     Ex: \<body\>
-
     \<app-home\>loading….\</app-home\>
-
     \</body\>
 
     -   Here, Angular has instantiated AppHome Component and loaded its template
@@ -255,10 +241,10 @@ Overview of Redfish and Swordfish Usage
 
 -   The Swordfish basic web client is compatible with all current versions of
     Redfish/Swordfish services. It parses the json output into various display
-    section depending on the property type
+    section depending on the property type.
 
 -   Via the Swordfish basic web client, based on the navigation property from
-    XML Schema. definitions, links are enabled to click and follow
+    XML Schema. definitions, links are enabled to click and follow.
 
 -   The response model is segregated into 4 entities, including:
 
@@ -315,7 +301,7 @@ Redfish and Swordfish Usage Using Web Client
     allows user to add multiple services by storing the IP address of respective
     service in local storage.
 
-    When a web client tries to talk to any schema it will respond in one of two
+    When a web client tries to talk to any schema it will respond with a HTTP status code in one of two
     ways:
 
     1. **Success:** Schema replies with a 200-status code along with the schema
@@ -325,7 +311,7 @@ Redfish and Swordfish Usage Using Web Client
     by the web client is inappropriate.
 
     Error responses may vary from version to version. Some may indicate the code
-    as part of statusCode or append as part of the body of the response. If the
+    as part of status code or append as part of the body of the response. If the
     web client encountered any issue while talking to a service implemented with
     a newer version of a redfish or swordfish schema, check the error response
     and add the status code in the below lines of app.js file
@@ -381,7 +367,8 @@ Project Structure of Swordfish Basic Web Client
 
 ![](media/17d961632beb5749b20c2c487feb448f.png)
 
-Project Architeture of basic web client
+Project Architecture of Swordfish Basic Web Client
+===============================================
 
 1.  **views** folder contains the modules and components that are used to build
     the basic web client
@@ -401,9 +388,8 @@ Project Architeture of basic web client
 6.  **views/src/environments -** let you specify settings to customize your
     application behaviour.
 
--   You can define your own environments in the .angular-cli.json file.
 
--   The default environments are:
+User defined environments can be created in the .angular-cli.json file. The default environments are:
 
 1.  **source**: use settings defined in environments/environment.ts.
 
@@ -421,7 +407,7 @@ The below diagram illustrates the data flow between components.
 
 ![](media/86986734c7374c1b242311b873c88bdd.png)
 
-Views Folder
+#### Views Folder
 
 1.  Any Modifications/addition of new files that relates to functional change or
     enhancement of the basic web client are to be done to files in this folder.
@@ -438,9 +424,9 @@ Views Folder
 Components Used for Swordfish Basic Web Client
 ==============================================
 
-App.js
+-   **App.js** 
 
--   This acts as a middleware between angular components (basic web client) and
+-   App.js acts as a middleware between angular components (basic web client) and
     server (backend).
 
 -   All the required libraries are injected in to the app.js file using
@@ -487,17 +473,17 @@ App.js
 
 -   **app.module.ts**: This file organizes and separates the code.
 
--   imports: You can import any other modules into the imports section.
+-   **imports:** You can import any other modules into the imports section.
 
--   declarations: You declare any components in your declarations. Any
+-   **declarations:** You declare any components in your declarations. Any
     components used in the routing of that module, must be declared in that
     module. If components are used in another module, then you only list them in
     that other module. Pipes created in the application need to declare in the
     declarations section.
 
--   Providers: you can inject all the services into providers section.
+-   **Providers:** you can inject all the services into providers section.
 
--   Bootstrap: you can specify which component should bootstrap/load first into
+-   **Bootstrap:** you can specify which component should bootstrap/load first into
     the browser in the bootstrap section.
 
     ![](media/8bafb709f7213b1df9191642d1088b7b.png)
@@ -575,7 +561,7 @@ App.js
 -   **pipes/key-value.ts**: This file is used to process and format the desired
     data.
 
-The object/array entities are dived into key-value pairs where the property is
+-  The object/array entities are divided into key-value pairs where the property is
 stored into key and the value of the property is stored into value.
 
 ![](media/4defdb1334bc5d23c205af6addf03ee0.png)
