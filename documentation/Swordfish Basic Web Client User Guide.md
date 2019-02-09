@@ -7,22 +7,19 @@
 
 The purpose of this User Guide is to illustrate how the Basic Web Client can connect to one or more Swordfish services including the Swordfish API Emulator, and present in a web UI frame the entire Redfish and Swordfish hierarchy. Developer and installation guides are also available.
 
-
-
-Contents
-    + [Introduction](#introduction)
-    + [Run-time Environment](#run-time-environment)
-        * [Default Port](#default-port)
-        * [Default Web server](#default-web-server)
-    + [Swordfish Basic Web Client Functional Areas](#swordfish-basic-web-client-functional-areas)
-    + [Basic Web Client Application Login](#basic-web-client-application-login)
-    + [Add Swordfish Services](#add-swordfish-services)
-    + [Delete Swordfish Service](#delete-swordfish-service)
-    + [Add Collection](#add-collection)
-    + [Delete Collection](#delete-collection)
-    + [Edit Properties](#edit-properties)
-    + [Logout](#logout)
-
+### Contents
+- [Introduction](#introduction)
+- [Run-time Environment](#run-time-environment)
+    + [Default Port](#default-port)
+    + [Default Web server](#default-web-server)
+- [Swordfish Basic Web Client Functional Areas](#swordfish-basic-web-client-functional-areas)
+  * [Basic Web Client Application Login](#basic-web-client-application-login)
+  * [Add Swordfish Services](#add-swordfish-services)
+  * [Delete Swordfish Service](#delete-swordfish-service)
+  * [Add Collection](#add-collection)
+  * [Delete Collection](#delete-collection)
+  * [Edit Properties](#edit-properties)
+  * [Logout](#logout)
 
 **Disclaimer**
 
@@ -39,7 +36,7 @@ Copyright © 2016-2019 Storage Networking Industry Association.
 
 [Top](#section)
 
-### Introduction 
+## Introduction 
 
 **SNIA Swordfish™ Specification**
 
@@ -60,6 +57,9 @@ IT administrators need to do with storage equipment and storage services in a
 data center. As a result, the API provides functionality that simplifies the way
 storage can be allocated, monitored, and managed.
 
+[Top](#section)
+
+
 **SNIA Swordfish Basic Web Client**
 
 The Swordfish Basic Web Client can connect to one or more Swordfish services
@@ -79,6 +79,9 @@ services (including emulators), and present in a web UI frame the entire system
 hierarchy. The basic web client also provides basic capabilities to modify
 configurable Properties (as specified in the schema), as well as providing a
 basic interface to add or remove elements from the service through a Web UI.
+
+[Top](#section)
+
 
 ### Run-time Environment
 
@@ -106,9 +109,7 @@ enable appropriate operation of the Swordfish Basic Web Client.
 
 ##### Default Port
 
-Node.js runs on 3000 port by default
-
-For configuring port options, please refer to the SNIA Developer guide.
+Node.js runs on 3000 port by default. For configuring port options, please refer to the SNIA Developer guide.
 
 ##### Default Web server
 
@@ -119,10 +120,16 @@ package.json files. For general installation instructions please refer to the
 README.md file on the SNIA Swordfish Basic Web Client Github site:
 <https://github.com/SNIA/Swordfish-basic-web-client>
 
-### Swordfish Basic Web Client Functional Areas 
+[Top](#section)
+
+
+## Swordfish Basic Web Client Functional Areas 
 
 The Swordfish Basic Web Client is composed of the following functional areas to
 access the data from Swordfish systems.
+
+[Top](#section)
+
 
 ### Basic Web Client Application Login
 
@@ -131,9 +138,9 @@ authenticating.
 
 For initial login, the user needs to provide the default Username and Password.
 
->   Email <swordfish@snia.org>
+    Email: swordfish@snia.org
 
->   Password snia\@123
+    Password: snia@123
 
 These credentials can be changed once the default values are used.
 
@@ -143,6 +150,9 @@ on how to change the default Email and password
 ![](media/463e8632a0908d74e255e21aa490b588.png)
 
 Enter Email and password in the input fields and click on Sign In button
+
+[Top](#section)
+
 
 ### Add Swordfish Services
 
@@ -167,7 +177,8 @@ Enter Email and password in the input fields and click on Sign In button
 
     **ex**: http://localhost:8089
 
-    **ex: 10**.12.14.15:9000
+    **ex:** 10.12.14.15:9000    
+    **Format:** \<IP address> : \<Port Number>
 
 -   IP address Port Number
 
@@ -197,6 +208,9 @@ through the collections
 
 ![](media/31495440787e5d02b617297c603a8799.png)
 
+[Top](#section)
+
+
 ### Delete Swordfish Service
 
 Deletes the added Swordfish Services on user approval. A service call is made to
@@ -216,6 +230,9 @@ DOS attacks.
 
     ![](media/6c6e7907f271ddaf094925736a5239da.png)
 
+[Top](#section)
+
+
 ### Add Collection
 
 An ‘Add’ option is provided at collection level to add a new collection to the
@@ -223,11 +240,17 @@ existing service.
 
 ![](media/3da05a79956df056aae87a804cc52cc7.png)
 
+[Top](#section)
+
+
 ### Delete Collection
 
 A ‘remove’ option is provided at collection level to remove existing collection.
 
 ![](media/a024b6faa163163edd808a9a8f9b4fc2.png)
+
+[Top](#section)
+
 
 ### Edit Properties
 
@@ -250,6 +273,9 @@ A ‘remove’ option is provided at collection level to remove existing collect
 
     ![](media/18f03cf5c47e1f002729a07f71ed0782.png)
 
+[Top](#section)
+
+
 ### Logout
 
 Deletes the Session and Services added by the user. A service call is made to
@@ -257,6 +283,10 @@ the respective API Endpoint to delete the Session created to prevent
 DOS attacks.
 
 ![](media/ea9e678ebd5859845a474119752b3275.png)
+
+[Top](#section)
+
+
 
 Additional information on the SNIA Swordfish specification and use is available
 at <https://www.snia.org/swordfish> and <https://github.com/SNIA>
