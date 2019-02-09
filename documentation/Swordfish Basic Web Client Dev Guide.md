@@ -13,7 +13,7 @@ for managing multiple services simultaneously, modifying configurable properties
 and adding or removing elements from the service through the web UI.
 Installation and user guides are also available.
 
-Contents
+### Contents
 - [Disclaimer](#disclaimer)
 - [Introduction](#introduction)
 - [Technology](#technology)
