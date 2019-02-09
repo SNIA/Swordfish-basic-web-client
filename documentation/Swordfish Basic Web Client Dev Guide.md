@@ -220,7 +220,7 @@ used.
 
 5.  To **Bootstrap** the module, include it in main.ts file.
 
-6.  To bootstrap the application, include the necessary resources into the
+6.  To **Bootstrap** the application, include the necessary resources into the
     index.html file.
 
     Ex: \<body\>
@@ -314,7 +314,7 @@ Redfish and Swordfish Usage Using Web Client
     as part of status code or append as part of the body of the response. If the
     web client encountered any issue while talking to a service implemented with
     a newer version of a redfish or swordfish schema, check the error response
-    and add the status code in the below lines of app.js file
+    and add the status code in the below lines of app.js file.
 
     ![](media/c658c556980eb523369b5e15a59f3bf9.png)
 
@@ -342,7 +342,7 @@ Redfish and Swordfish Usage Using Web Client
     ![](media/a9d29fc0d9b7488d74a52ba6dc17d0eb.png)
 
     Please refer to Swordfish Basic Web Client User Guide on how to add/remove
-    collections/properties
+    collections/properties.
 
 [Top](#section)
 
@@ -371,7 +371,7 @@ Project Architecture of Swordfish Basic Web Client
 ===============================================
 
 1.  **views** folder contains the modules and components that are used to build
-    the basic web client
+    the basic web client.
 
 2.  **views/src** – This folder contains all the modules and components that aer
     used to build basic web client.
@@ -382,11 +382,10 @@ Project Architecture of Swordfish Basic Web Client
 4.  **views/src/assets** – This folder contains all the static files,json and
     images that are used across the application.
 
-5.  **angular-cli.json** - contains the configurations that are required to load
+5.  **angular-cli.json** - Contains the configurations that are required to load
     the angular-cli.
 
-6.  **views/src/environments -** let you specify settings to customize your
-    application behaviour.
+6.  **views/src/environments -** Allows the developer to specify settings to customize application behavior.
 
 
 User defined environments can be created in the .angular-cli.json file. The default environments are:
@@ -430,7 +429,7 @@ Components Used for Swordfish Basic Web Client
     server (backend).
 
 -   All the required libraries are injected in to the app.js file using
-    **require** method
+    **require** method.
 
 -   Example:
 
