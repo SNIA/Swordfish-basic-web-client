@@ -309,6 +309,10 @@ Redfish and Swordfish Usage Using Web Client
 
     2. **Error:** Schema replies with a status code of 500 if the request made
     by the web client is inappropriate.
+    
+    The status codes are HTTP status codes as described under HTTP 1.1 rfc2616 
+    (https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html), as specified by 
+    Swordfish and Redfish specifications.
 
     Error responses may vary from version to version. Some may indicate the code
     as part of status code or append as part of the body of the response. If the
