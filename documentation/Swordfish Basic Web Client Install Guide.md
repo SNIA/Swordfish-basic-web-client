@@ -210,7 +210,10 @@ Node and npm Installation
 
 Web Client Installation
 =======================
-Run the below commands in terminal/console window, if you are running the application for the first time.
+Navigate to the github project workspace of Swordfish-basic-web-client created on your machine. 
+Execute the following commands to install the basic web client". This can be followed up with 
+the command such as "cd views", "ng build" etc. Run the below commands in terminal/console window, 
+if you are running the application for the first time.
 
 1. **cd views && npm install**
 
